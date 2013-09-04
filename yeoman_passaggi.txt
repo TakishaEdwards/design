@@ -1,0 +1,25 @@
+# Creazione Yeoman Workflow (Less + AngularJS) 
+
+1) cd <proj_dir>
+
+2) sudo npm update -g yo
+
+3) sudo npm install -g generator-bootstrap-less
+
+4) yo bootstrap-less
+
+5) bower install --save underscore
+
+6) bower install --save angular
+
+7) in HEAD:
+
+	<!-- build:js scripts/vendor/angular.js -->
+    <script src="bower_components/angular/angular.js"></script>
+    <!-- endbuild -->
+
+8) dopo jQuery
+
+	<script src="bower_components/underscore/underscore.js"></script>
+
+9) grunt server | build

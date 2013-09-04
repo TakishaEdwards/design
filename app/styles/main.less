@@ -1,0 +1,267 @@
+@import "../bower_components/bootstrap/less/bootstrap.less";
+@icon-font-path: "../fonts/glyphicons/";
+
+@import "../bower_components/font-awesome/less/font-awesome.less";
+@FontAwesomePath: "../fonts/font-awesome";
+
+@import "../bower_components/lesshat/lesshat.less";
+
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,800,200);
+
+// Project variables
+@import "variables.less";
+
+//---------------------------------------------------------------------------------
+
+html {
+	height: 100%;
+	min-height: 100%;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+	font-family: @font-family;
+	font-weight: 400;
+	.gradient(~"radial-gradient(rgb(230, 236, 181), rgb(102, 126, 40))");
+}
+
+.container {	
+
+	height: 100%;
+	padding-bottom: 40px;
+
+	#login {
+		
+		#login-panel {
+
+			margin-top: 20px;
+
+			h1, h2 {
+				text-align: center;
+				margin: 0 auto 20px;
+			}
+
+			h1 {
+				font-family: @font-family;
+
+				span {
+					font-weight: 800;
+				}
+
+				small {
+					color: @gray-dark;
+				}
+			}
+
+			form#login-form {
+				background: #fff;
+				padding: 15px 15px;
+				.box-shadow(~"0 1px 5px #000");
+				.border-radius(8px);
+			}
+
+		}
+
+	}
+
+	footer {
+		position: fixed;
+		bottom: 0;
+		left: 50%;
+		height: 40px;
+		width: 240px;		
+		margin-left: -120px;
+		text-align: center;
+		padding: 10px 0;
+	}
+
+}
+
+//---------------------------------------------------------------------------------
+//	ALERT ANIMATION
+//---------------------------------------------------------------------------------
+	
+#alert-msg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	padding: 12px 0;
+	text-align: center;
+	font-size: 1.2em;
+	font-weight: 400;
+	z-index: 101;
+
+	background: @body-bg;
+	.box-shadow(~"0 1px 5px #000");
+
+	&.error {
+		color: @btn-danger-color;
+		background: @brand-danger;
+	}
+
+	&.success {
+		color: @btn-success-color;
+		background: @brand-success;
+	}
+}
+
+.cssanimations.csstransforms #alert-msg {
+	.transform(~"translateY(-60px)");
+	.animation(~"slideDown 3.0s .5s 1 ease forwards;");
+}
+
+@keyframes slideDown {
+	0%, 100% { transform: translateY(-50px); }
+	0%, 100% { -ms-transform: translateY(-50px); }
+	10%, 90% { transform: translateY(0px); }
+	10%, 90% { -ms-transform: translateY(0px); }
+}
+@-webkit-keyframes slideDown {
+	0%, 100% { -webkit-transform: translateY(-50px); }
+	10%, 90% { -webkit-transform: translateY(0px); }
+}
+@-moz-keyframes slideDown {
+	0%, 100% { -moz-transform: translateY(-50px); }
+	10%, 90% { -moz-transform: translateY(0px); }
+}
+
+//---------------------------------------------------------------------------------
+//	MEDIA QUERIES
+//---------------------------------------------------------------------------------
+
+/* Small height viewport */
+@media (max-height: 330px) {
+	
+	.container {
+
+		footer {
+			position: relative;
+		}
+
+	}
+
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm) {
+
+	.container {
+
+		#login {
+			
+			height: 100%;
+			position: relative;
+
+			#login-panel {
+				position: absolute;
+				margin: -104px auto;
+				float: none;
+				top: 50%;
+				left: 0;
+				right: 0;
+			}
+
+			form#login-form {
+				
+				button {
+					display: inline;
+					width: 152px;
+					margin-top: 25px;
+				}
+			}
+
+		}
+
+	}
+
+}
+
+/* iPads (portrait) -------- */
+@media only screen
+and (min-device-width : @screen-sm)
+and (max-device-width : @ipad-h)
+and (orientation : portrait) {
+
+	.container {
+
+		#login {
+
+			form#login-form {
+
+				button {
+					width: 90px;
+				}
+			}
+
+		}
+
+	}
+
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: @screen-md) {
+
+	.container {
+
+		#login {
+
+			form#login-form {
+
+				button {
+					width: 137px;
+				}
+			}
+
+		}
+
+	}
+
+}
+
+/* iPads (landscape) -------- */
+@media only screen
+and (min-device-width : @screen-sm)
+and (max-device-width : @ipad-h)
+and (orientation : landscape) {
+
+	.container {
+
+		#login {
+
+			form#login-form {
+
+				button {
+					width: 75px;
+				}
+			}
+
+		}
+
+	}
+	
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg) {
+
+	.container {
+
+		#login {
+
+			form#login-form {
+
+				button {
+					width: 97px;
+				}
+			}
+
+		}
+
+	}
+
+}
+
