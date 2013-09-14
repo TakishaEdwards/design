@@ -17,18 +17,16 @@
 </head>
 <body>
 
-	<div class="container">
-		
-		<div id="alert-msg" class="success">Good message</div>
+	<div class="wrapper">
 
-		<div id="login" class="wrapper">
+		<div id="login" class="layout">
 
-			<div class="row">
-				<div id="login-panel" class="col-xs-12 col-sm-12 col-md-9 col-lg-7">
+			<div class="row-fluid">
+				<div id="login-panel" class="col-xs-12">
 
 					<h1>Pongo<span>CMS</span> <small>v2</small></h1>
 
-					<form action="" id="login-form" class="form-inline">
+					<form action="dashboard.html" id="login-form" class="form-inline">
 						<div class="form-group">
 							<label for="username">Username</label>
 							<input type="text" class="form-control" id="username" autocorrect="off" autocapitalize="off" placeholder="Enter your username">
@@ -37,6 +35,7 @@
 							<label for="password">Password</label>
 							<input type="password" class="form-control" id="password" placeholder="Enter your password">
 						</div>
+						<!-- <button type="button" class="btn btn-primary btn-block">login</button> -->
 						<button type="button" class="btn btn-primary btn-block">login</button>
 					</form>
 				</div>
@@ -53,28 +52,39 @@
 	<![endif]-->
 
 	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-	<script>
-		(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-		function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-		e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-		e.src='//www.google-analytics.com/analytics.js';
-		r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-		ga('create','UA-XXXXX-X');ga('send','pageview');
+	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+	<script type="text/javascript">
+
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-33011581-2']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+
 	</script>
 
 
-	<!-- build:js scripts/main.js -->
+	<!-- build:js scripts/jquery.js -->
 	<script src="bower_components/jquery/jquery.js"></script>
 	<script src="bower_components/underscore/underscore.js"></script>
-	<script src="scripts/pongo.js"></script>
-	<script src="scripts/main.js"></script>
 	<!-- endbuild -->
-
+	
 	<!-- build:js scripts/plugins.js -->
 	<script src="scripts/plugins/nestable.js"></script>
 	<!-- endbuild -->
 
-	<script src="scripts/pages/login.js"></script>
+	<!-- build:js scripts/pongo.js -->
+	<script src="scripts/pongo.js"></script>
+	<script src="scripts/main.js"></script>
+	<!-- endbuild -->
+
+	<!-- build:js scripts/sections/page.js -->
+	<script src="scripts/sections/page.js"></script>
+	<!-- endbuild -->
 
 	<!-- build:js scripts/vendor/bootstrap.js -->
 	<script src="bower_components/bootstrap/js/affix.js"></script>

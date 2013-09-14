@@ -1,0 +1,264 @@
+// NESTABLE PLUGIN
+
+.dd {
+	
+	margin: 0;
+	padding: 0;
+	display: none;
+
+	ol {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+
+		ol {
+			list-style-type: none;
+			margin-left: 20px;
+		}
+
+		li {
+				
+			.li-page();
+
+		}
+
+		.dd-placeholder {
+			margin-top: 5px;
+			border: 1px dashed #fff;
+			.border-radius(4px);
+			background-color: @brand-info;
+		}
+
+	}
+
+}
+
+ol.dd-list.dd-dragel {
+
+	position: absolute;
+	pointer-events: none;
+	list-style-type: none;
+	z-index: 9999;
+	padding: 0;
+
+	ol {
+		list-style-type: none;
+	}
+
+	li {
+
+		.li-page();
+		width: inherit;
+
+	}
+
+}
+
+.dl {
+
+	margin: 0;
+	padding: 0;
+	display: block;
+
+	ol {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+
+		li {
+			.li-element();
+		}
+
+		.dl-placeholder {
+			margin-top: 5px;
+			border: 1px dashed #fff;
+			.border-radius(4px);
+			background-color: @brand-info;
+		}
+
+	}
+
+}
+
+ol.dl-list.dl-dragel {
+
+	position: absolute;
+	pointer-events: none;
+	list-style-type: none;
+	z-index: 9999;
+	padding: 0;
+
+	ol {
+		list-style-type: none;
+	}
+
+	li {
+
+		.li-element();
+		width: inherit;
+
+	}
+
+}
+
+// LI ELEMENT MIXIN
+
+.li-element {
+
+	position: relative;
+	cursor: move;
+
+	&.dl-item > i {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 23px;
+		height: 28px;
+		padding-top: 7px;
+		padding-left: 5px;
+		color: @gray-dark;
+	}			
+
+	.dl-handle {
+		display: block;
+		margin-top: 5px;
+		padding: 4px 24px 4px 4px;
+		color: @gray;
+		font-weight: 600;
+		background-color: #fff;
+		border-left: 1px solid @brand-primary;
+		border-right: none;
+		text-align: right;
+		.border-radius(4px);
+	}
+
+	a {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 23px;
+		height: 28px;
+		padding-top: 5px;
+		padding-left: 7px;
+		color: #fff;
+		.border-radius(4px 0 0 4px);
+		background-color: @gray-light;
+
+		&:hover {
+			text-decoration: none;
+			background-color: darken(@gray-light, 5%);
+		}
+		
+		&.edit {
+			background-color: @brand-primary;
+
+			&:hover {
+				background-color: darken(@brand-primary, 5%);
+			}
+
+		}
+
+		&.new {
+			background-color: @brand-success;
+
+			&:hover {
+				background-color: darken(@brand-success, 5%);
+			}
+
+		}
+
+		&.save {
+			background-color: @brand-warning;
+
+			&:hover {
+				background-color: darken(@brand-warning, 5%);
+			}
+
+		}
+
+		i.icon-refresh {
+			margin-left: -2px;
+		}
+	}
+
+}
+
+// LI PAGE MIXIN
+
+.li-page {
+
+	position: relative;
+	cursor: move;
+
+	&.dd-item > i {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 23px;
+		height: 28px;
+		padding-top: 7px;
+		padding-left: 5px;
+		color: @gray-dark;
+	}			
+
+	.dd-handle {
+		display: block;
+		margin-top: 5px;
+		padding: 4px 4px 4px 24px;
+		color: @gray-dark;
+		font-weight: 600;
+		background-color: @gray-lighter;
+		border-right: 1px solid @brand-primary;
+		.border-radius(4px);
+	}
+
+	a {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 23px;
+		height: 28px;
+		padding-top: 5px;
+		padding-left: 8px;
+		color: #fff;
+		.border-radius(0 4px 4px 0);
+		background-color: @gray-light;
+
+		&:hover {
+			text-decoration: none;
+			background-color: darken(@gray-light, 5%);
+		}
+		
+		&.edit {
+			background-color: @brand-primary;
+
+			&:hover {
+				background-color: darken(@brand-primary, 5%);
+			}
+
+		}
+
+		&.new {
+			background-color: @brand-success;
+
+			&:hover {
+				background-color: darken(@brand-success, 5%);
+			}
+
+		}
+
+		&.save {
+			background-color: @brand-warning;
+
+			&:hover {
+				background-color: darken(@brand-warning, 5%);
+			}
+
+		}
+
+		i.icon-refresh {
+			margin-left: -2px;
+		}
+	}
+
+}

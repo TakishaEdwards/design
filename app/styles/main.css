@@ -8804,6 +8804,589 @@ a .icon-flip-vertical:before {
   content: "\f18b";
 }
 
+.dd {
+  display: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dd ol {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.dd ol ol {
+  margin-left: 20px;
+  list-style-type: none;
+}
+
+.dd ol li {
+  position: relative;
+  cursor: move;
+}
+
+.dd ol li.dd-item > i {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 23px;
+  height: 28px;
+  padding-top: 7px;
+  padding-left: 5px;
+  color: #333333;
+}
+
+.dd ol li .dd-handle {
+  display: block;
+  padding: 4px 4px 4px 24px;
+  margin-top: 5px;
+  font-weight: 600;
+  color: #333333;
+  background-color: #eeeeee;
+  border-right: 1px solid #428bca;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  -webkit-background-clip: padding-box;
+     -moz-background-clip: padding;
+          background-clip: padding-box;
+}
+
+.dd ol li a {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 23px;
+  height: 28px;
+  padding-top: 5px;
+  padding-left: 8px;
+  color: #fff;
+  background-color: #999999;
+  -webkit-border-radius: 0 4px 4px 0;
+     -moz-border-radius: 0 4px 4px 0;
+          border-radius: 0 4px 4px 0;
+  -webkit-background-clip: padding-box;
+     -moz-background-clip: padding;
+          background-clip: padding-box;
+}
+
+.dd ol li a:hover {
+  text-decoration: none;
+  background-color: #8c8c8c;
+}
+
+.dd ol li a.edit {
+  background-color: #428bca;
+}
+
+.dd ol li a.edit:hover {
+  background-color: #357ebd;
+}
+
+.dd ol li a.new {
+  background-color: #5cb85c;
+}
+
+.dd ol li a.new:hover {
+  background-color: #4cae4c;
+}
+
+.dd ol li a.save {
+  background-color: #f0ad4e;
+}
+
+.dd ol li a.save:hover {
+  background-color: #eea236;
+}
+
+.dd ol li a i.icon-refresh {
+  margin-left: -2px;
+}
+
+.dd ol .dd-placeholder {
+  margin-top: 5px;
+  background-color: #5bc0de;
+  border: 1px dashed #fff;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  -webkit-background-clip: padding-box;
+     -moz-background-clip: padding;
+          background-clip: padding-box;
+}
+
+ol.dd-list.dd-dragel {
+  position: absolute;
+  z-index: 9999;
+  padding: 0;
+  list-style-type: none;
+  pointer-events: none;
+}
+
+ol.dd-list.dd-dragel ol {
+  list-style-type: none;
+}
+
+ol.dd-list.dd-dragel li {
+  position: relative;
+  width: inherit;
+  cursor: move;
+}
+
+ol.dd-list.dd-dragel li.dd-item > i {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 23px;
+  height: 28px;
+  padding-top: 7px;
+  padding-left: 5px;
+  color: #333333;
+}
+
+ol.dd-list.dd-dragel li .dd-handle {
+  display: block;
+  padding: 4px 4px 4px 24px;
+  margin-top: 5px;
+  font-weight: 600;
+  color: #333333;
+  background-color: #eeeeee;
+  border-right: 1px solid #428bca;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  -webkit-background-clip: padding-box;
+     -moz-background-clip: padding;
+          background-clip: padding-box;
+}
+
+ol.dd-list.dd-dragel li a {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 23px;
+  height: 28px;
+  padding-top: 5px;
+  padding-left: 8px;
+  color: #fff;
+  background-color: #999999;
+  -webkit-border-radius: 0 4px 4px 0;
+     -moz-border-radius: 0 4px 4px 0;
+          border-radius: 0 4px 4px 0;
+  -webkit-background-clip: padding-box;
+     -moz-background-clip: padding;
+          background-clip: padding-box;
+}
+
+ol.dd-list.dd-dragel li a:hover {
+  text-decoration: none;
+  background-color: #8c8c8c;
+}
+
+ol.dd-list.dd-dragel li a.edit {
+  background-color: #428bca;
+}
+
+ol.dd-list.dd-dragel li a.edit:hover {
+  background-color: #357ebd;
+}
+
+ol.dd-list.dd-dragel li a.new {
+  background-color: #5cb85c;
+}
+
+ol.dd-list.dd-dragel li a.new:hover {
+  background-color: #4cae4c;
+}
+
+ol.dd-list.dd-dragel li a.save {
+  background-color: #f0ad4e;
+}
+
+ol.dd-list.dd-dragel li a.save:hover {
+  background-color: #eea236;
+}
+
+ol.dd-list.dd-dragel li a i.icon-refresh {
+  margin-left: -2px;
+}
+
+.dl {
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+
+.dl ol {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.dl ol li {
+  position: relative;
+  cursor: move;
+}
+
+.dl ol li.dl-item > i {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 23px;
+  height: 28px;
+  padding-top: 7px;
+  padding-left: 5px;
+  color: #333333;
+}
+
+.dl ol li .dl-handle {
+  display: block;
+  padding: 4px 24px 4px 4px;
+  margin-top: 5px;
+  font-weight: 600;
+  color: #555555;
+  text-align: right;
+  background-color: #fff;
+  border-right: none;
+  border-left: 1px solid #428bca;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  -webkit-background-clip: padding-box;
+     -moz-background-clip: padding;
+          background-clip: padding-box;
+}
+
+.dl ol li a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 23px;
+  height: 28px;
+  padding-top: 5px;
+  padding-left: 7px;
+  color: #fff;
+  background-color: #999999;
+  -webkit-border-radius: 4px 0 0 4px;
+     -moz-border-radius: 4px 0 0 4px;
+          border-radius: 4px 0 0 4px;
+  -webkit-background-clip: padding-box;
+     -moz-background-clip: padding;
+          background-clip: padding-box;
+}
+
+.dl ol li a:hover {
+  text-decoration: none;
+  background-color: #8c8c8c;
+}
+
+.dl ol li a.edit {
+  background-color: #428bca;
+}
+
+.dl ol li a.edit:hover {
+  background-color: #357ebd;
+}
+
+.dl ol li a.new {
+  background-color: #5cb85c;
+}
+
+.dl ol li a.new:hover {
+  background-color: #4cae4c;
+}
+
+.dl ol li a.save {
+  background-color: #f0ad4e;
+}
+
+.dl ol li a.save:hover {
+  background-color: #eea236;
+}
+
+.dl ol li a i.icon-refresh {
+  margin-left: -2px;
+}
+
+.dl ol .dl-placeholder {
+  margin-top: 5px;
+  background-color: #5bc0de;
+  border: 1px dashed #fff;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  -webkit-background-clip: padding-box;
+     -moz-background-clip: padding;
+          background-clip: padding-box;
+}
+
+ol.dl-list.dl-dragel {
+  position: absolute;
+  z-index: 9999;
+  padding: 0;
+  list-style-type: none;
+  pointer-events: none;
+}
+
+ol.dl-list.dl-dragel ol {
+  list-style-type: none;
+}
+
+ol.dl-list.dl-dragel li {
+  position: relative;
+  width: inherit;
+  cursor: move;
+}
+
+ol.dl-list.dl-dragel li.dl-item > i {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 23px;
+  height: 28px;
+  padding-top: 7px;
+  padding-left: 5px;
+  color: #333333;
+}
+
+ol.dl-list.dl-dragel li .dl-handle {
+  display: block;
+  padding: 4px 24px 4px 4px;
+  margin-top: 5px;
+  font-weight: 600;
+  color: #555555;
+  text-align: right;
+  background-color: #fff;
+  border-right: none;
+  border-left: 1px solid #428bca;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  -webkit-background-clip: padding-box;
+     -moz-background-clip: padding;
+          background-clip: padding-box;
+}
+
+ol.dl-list.dl-dragel li a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 23px;
+  height: 28px;
+  padding-top: 5px;
+  padding-left: 7px;
+  color: #fff;
+  background-color: #999999;
+  -webkit-border-radius: 4px 0 0 4px;
+     -moz-border-radius: 4px 0 0 4px;
+          border-radius: 4px 0 0 4px;
+  -webkit-background-clip: padding-box;
+     -moz-background-clip: padding;
+          background-clip: padding-box;
+}
+
+ol.dl-list.dl-dragel li a:hover {
+  text-decoration: none;
+  background-color: #8c8c8c;
+}
+
+ol.dl-list.dl-dragel li a.edit {
+  background-color: #428bca;
+}
+
+ol.dl-list.dl-dragel li a.edit:hover {
+  background-color: #357ebd;
+}
+
+ol.dl-list.dl-dragel li a.new {
+  background-color: #5cb85c;
+}
+
+ol.dl-list.dl-dragel li a.new:hover {
+  background-color: #4cae4c;
+}
+
+ol.dl-list.dl-dragel li a.save {
+  background-color: #f0ad4e;
+}
+
+ol.dl-list.dl-dragel li a.save:hover {
+  background-color: #eea236;
+}
+
+ol.dl-list.dl-dragel li a i.icon-refresh {
+  margin-left: -2px;
+}
+
+.li-element {
+  position: relative;
+  cursor: move;
+}
+
+.li-element.dl-item > i {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 23px;
+  height: 28px;
+  padding-top: 7px;
+  padding-left: 5px;
+  color: #333333;
+}
+
+.li-element .dl-handle {
+  display: block;
+  padding: 4px 24px 4px 4px;
+  margin-top: 5px;
+  font-weight: 600;
+  color: #555555;
+  text-align: right;
+  background-color: #fff;
+  border-right: none;
+  border-left: 1px solid #428bca;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  -webkit-background-clip: padding-box;
+     -moz-background-clip: padding;
+          background-clip: padding-box;
+}
+
+.li-element a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 23px;
+  height: 28px;
+  padding-top: 5px;
+  padding-left: 7px;
+  color: #fff;
+  background-color: #999999;
+  -webkit-border-radius: 4px 0 0 4px;
+     -moz-border-radius: 4px 0 0 4px;
+          border-radius: 4px 0 0 4px;
+  -webkit-background-clip: padding-box;
+     -moz-background-clip: padding;
+          background-clip: padding-box;
+}
+
+.li-element a:hover {
+  text-decoration: none;
+  background-color: #8c8c8c;
+}
+
+.li-element a.edit {
+  background-color: #428bca;
+}
+
+.li-element a.edit:hover {
+  background-color: #357ebd;
+}
+
+.li-element a.new {
+  background-color: #5cb85c;
+}
+
+.li-element a.new:hover {
+  background-color: #4cae4c;
+}
+
+.li-element a.save {
+  background-color: #f0ad4e;
+}
+
+.li-element a.save:hover {
+  background-color: #eea236;
+}
+
+.li-element a i.icon-refresh {
+  margin-left: -2px;
+}
+
+.li-page {
+  position: relative;
+  cursor: move;
+}
+
+.li-page.dd-item > i {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 23px;
+  height: 28px;
+  padding-top: 7px;
+  padding-left: 5px;
+  color: #333333;
+}
+
+.li-page .dd-handle {
+  display: block;
+  padding: 4px 4px 4px 24px;
+  margin-top: 5px;
+  font-weight: 600;
+  color: #333333;
+  background-color: #eeeeee;
+  border-right: 1px solid #428bca;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  -webkit-background-clip: padding-box;
+     -moz-background-clip: padding;
+          background-clip: padding-box;
+}
+
+.li-page a {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 23px;
+  height: 28px;
+  padding-top: 5px;
+  padding-left: 8px;
+  color: #fff;
+  background-color: #999999;
+  -webkit-border-radius: 0 4px 4px 0;
+     -moz-border-radius: 0 4px 4px 0;
+          border-radius: 0 4px 4px 0;
+  -webkit-background-clip: padding-box;
+     -moz-background-clip: padding;
+          background-clip: padding-box;
+}
+
+.li-page a:hover {
+  text-decoration: none;
+  background-color: #8c8c8c;
+}
+
+.li-page a.edit {
+  background-color: #428bca;
+}
+
+.li-page a.edit:hover {
+  background-color: #357ebd;
+}
+
+.li-page a.new {
+  background-color: #5cb85c;
+}
+
+.li-page a.new:hover {
+  background-color: #4cae4c;
+}
+
+.li-page a.save {
+  background-color: #f0ad4e;
+}
+
+.li-page a.save:hover {
+  background-color: #eea236;
+}
+
+.li-page a i.icon-refresh {
+  margin-left: -2px;
+}
+
 /* Project variables */
 
 html {
@@ -8822,34 +9405,47 @@ body {
   background-image: radial-gradient(#e6ecb5, #667e28);
 }
 
-.container {
+.wrapper {
+  position: relative;
   height: 100%;
-  padding-bottom: 40px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin: 0 auto;
 }
 
-.container #login #login-panel {
-  margin-top: 20px;
+.wrapper h1,
+.wrapper h2,
+.wrapper h3,
+.wrapper h4,
+.wrapper h5,
+.wrapper h6 {
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
 }
 
-.container #login #login-panel h1,
-.container #login #login-panel h2 {
+.wrapper #login #login-panel {
+  padding-top: 20px;
+}
+
+.wrapper #login #login-panel h1,
+.wrapper #login #login-panel h2 {
   margin: 0 auto 20px;
   text-align: center;
 }
 
-.container #login #login-panel h1 {
+.wrapper #login #login-panel h1 {
   font-family: 'Raleway', sans-serif;
 }
 
-.container #login #login-panel h1 span {
+.wrapper #login #login-panel h1 span {
   font-weight: 800;
 }
 
-.container #login #login-panel h1 small {
+.wrapper #login #login-panel h1 small {
   color: #333333;
 }
 
-.container #login #login-panel form#login-form {
+.wrapper #login #login-panel form#login-form {
   padding: 15px 15px;
   background: #fff;
   -webkit-border-radius: 8px;
@@ -8863,25 +9459,273 @@ body {
           background-clip: padding-box;
 }
 
-.container footer {
+.wrapper footer {
+  position: relative;
+  height: 40px;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.wrapper #login + footer {
   position: fixed;
   bottom: 0;
   left: 50%;
   width: 240px;
-  height: 40px;
-  padding: 10px 0;
   margin-left: -120px;
-  text-align: center;
 }
 
-#alert-msg {
+.wrapper #page #page-panel {
+  min-height: 200px;
+  padding: 15px;
+  overflow: hidden;
+  background: #fff;
+  -webkit-box-shadow: 0 4px 2px -2px #000000;
+     -moz-box-shadow: 0 4px 2px -2px #000000;
+          box-shadow: 0 4px 2px -2px #000000;
+}
+
+.subbar {
+  position: relative;
+  width: 100%;
+  padding: 0 0 0 15px;
+  background-color: #e2e2e2;
+}
+
+.subbar:before,
+.subbar:after {
+  display: table;
+  content: " ";
+}
+
+.subbar:after {
+  clear: both;
+}
+
+.subbar:before,
+.subbar:after {
+  display: table;
+  content: " ";
+}
+
+.subbar:after {
+  clear: both;
+}
+
+.subbar .box {
+  position: relative;
+  float: left;
+  padding: 5px 0;
+}
+
+.subbar .box h2 {
+  max-width: 250px;
+  font-size: 1.3em;
+  font-weight: 600;
+}
+
+.subbar .box h2 span {
+  display: block;
+  padding: 2px 0 0 0;
+  font-size: .5em;
+  font-weight: 400;
+}
+
+.subbar .subbar-toggle {
+  position: relative;
+  padding: 6px 10px 2px 8px;
+  font-size: 1.7em;
+  color: #555555;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  border-left: 1px solid #eeeeee;
+}
+
+.subbar .subbar-toggle.element-toggle {
+  float: right;
+}
+
+.navbar {
+  padding: 0;
+  margin: 0;
+  border: none !important;
+  -webkit-border-radius: 0;
+     -moz-border-radius: 0;
+          border-radius: 0;
+  -webkit-background-clip: padding-box;
+     -moz-background-clip: padding;
+          background-clip: padding-box;
+}
+
+.navbar .toggle {
+  position: relative;
+  z-index: 105;
+  padding: 6px 10px 4px 10px;
+  font-size: 2em;
+  color: #eeeeee;
+  cursor: pointer;
+  background-color: #333333;
+  border: none;
+}
+
+.navbar .page-toggle {
+  float: left;
+}
+
+.navbar .menu-toggle {
+  float: right;
+}
+
+.navbar .navbar-brand span {
+  font-weight: 800;
+}
+
+.navbar .navbar-collapse {
+  border: 0;
+  -webkit-box-shadow: none;
+     -moz-box-shadow: none;
+          box-shadow: none;
+}
+
+.wrapper,
+.page-bar,
+.element-bar {
+  -webkit-transition: all 0.3s ease;
+     -moz-transition: all 0.3s ease;
+          transition: all 0.3s ease;
+}
+
+.push-right {
+  position: fixed;
+  top: 0;
+  overflow: hidden;
+}
+
+.push-right .wrapper {
+  left: 295px;
+}
+
+.push-right .page-bar {
+  left: 0;
+}
+
+.push-left {
+  position: fixed;
+  top: 0;
+  overflow: hidden;
+}
+
+.push-left .wrapper {
+  top: -52px;
+  right: 295px;
+}
+
+.push-left .element-bar {
+  right: 0;
+}
+
+.element-bar {
+  position: fixed;
+  top: 0;
+  right: -295px;
+  z-index: 1001;
+  width: 295px;
+  height: 100%;
+  background-color: #e2e2e2;
+  border-left: 1px solid #999999;
+}
+
+.element-bar .element-body {
+  height: 100%;
+  padding: 10px 10px 10px 13px;
+  overflow-y: scroll;
+  color: #555555;
+  border-right: 12px dotted #555555;
+}
+
+.element-bar .element-body header {
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.element-bar .element-body header h2 {
+  margin: 5px 0 20px 0;
+  font-family: 'Raleway', sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: #555555;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.page-bar {
+  position: fixed;
+  top: 0;
+  left: -295px;
+  z-index: 1001;
+  width: 295px;
+  height: 100%;
+  background-color: #333333;
+  border-right: 1px solid #080808;
+}
+
+.page-bar .page-body {
+  height: 100%;
+  padding: 10px 10px 10px 13px;
+  overflow-y: scroll;
+  color: #eeeeee;
+  border-left: 12px dotted #555555;
+}
+
+.page-bar .page-body header {
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.page-bar .page-body header h2 {
+  margin: 5px 0 20px 0;
+  font-family: 'Raleway', sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: #555555;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.page-bar .page-body header .page-controls {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  font-size: 1.2em;
+}
+
+.page-bar .page-body header .page-controls i {
+  color: #555555;
+  cursor: pointer;
+}
+
+.page-bar .page-body header .page-controls i + i {
+  margin-left: 10px;
+}
+
+.page-bar .page-body header select {
+  display: inline;
+  width: 57%;
+}
+
+.page-bar .page-body header button {
+  float: right;
+  width: 40%;
+}
+
+.alert-msg {
   position: absolute;
   top: 0;
   right: 0;
   left: 0;
-  z-index: 101;
+  z-index: 2001;
   width: 100%;
-  padding: 12px 0;
+  padding: 14px 0;
   font-size: 1.2em;
   font-weight: 400;
   text-align: center;
@@ -8891,22 +9735,27 @@ body {
           box-shadow: 0 1px 5px #000;
 }
 
-#alert-msg.error {
+.alert-msg.error {
   color: #ffffff;
   background: #d9534f;
 }
 
-#alert-msg.success {
+.alert-msg.info {
+  color: #ffffff;
+  background: #428bca;
+}
+
+.alert-msg.success {
   color: #ffffff;
   background: #5cb85c;
 }
 
-.cssanimations.csstransforms #alert-msg {
-  -webkit-transform: translateY(-60px);
-     -moz-transform: translateY(-60px);
-      -ms-transform: translateY(-60px);
-       -o-transform: translateY(-60px);
-          transform: translateY(-60px);
+.cssanimations.csstransforms .alert-msg {
+  -webkit-transform: translateY(-62px);
+     -moz-transform: translateY(-62px);
+      -ms-transform: translateY(-62px);
+       -o-transform: translateY(-62px);
+          transform: translateY(-62px);
   -webkit-animation: slideDown 3.0s .5s 1 ease forwards;
      -moz-animation: slideDown 3.0s .5s 1 ease forwards;
       -ms-animation: slideDown 3.0s .5s 1 ease forwards;
@@ -8917,11 +9766,11 @@ body {
 @keyframes slideDown {
   0%,
   100% {
-    transform: translateY(-50px);
+    transform: translateY(-62px);
   }
   0%,
   100% {
-    -ms-transform: translateY(-50px);
+    -ms-transform: translateY(-62px);
   }
   10%,
   90% {
@@ -8936,7 +9785,7 @@ body {
 @-webkit-keyframes slideDown {
   0%,
   100% {
-    -webkit-transform: translateY(-50px);
+    -webkit-transform: translateY(-62px);
   }
   10%,
   90% {
@@ -8947,7 +9796,7 @@ body {
 @-moz-keyframes slideDown {
   0%,
   100% {
-    -moz-transform: translateY(-50px);
+    -moz-transform: translateY(-62px);
   }
   10%,
   90% {
@@ -8955,22 +9804,27 @@ body {
   }
 }
 
-/* Small height viewport */
+/* Small devices (height viewport 330px) */
 
 @media (max-height: 330px) {
-  .container footer {
-    position: relative;
+  .wrapper footer {
+    position: relative !important;
   }
 }
 
 /* Small devices (tablets, 768px and up) */
 
 @media (min-width: 768px) {
-  .container #login {
-    position: relative;
-    height: 100%;
+  .wrapper .navbar .menu-toggle {
+    display: none;
   }
-  .container #login #login-panel {
+  .wrapper #login {
+    position: relative;
+    width: 708px;
+    height: 100%;
+    margin: 0 auto;
+  }
+  .wrapper #login #login-panel {
     position: absolute;
     top: 50%;
     right: 0;
@@ -8978,9 +9832,9 @@ body {
     float: none;
     margin: -104px auto;
   }
-  .container #login form#login-form button {
+  .wrapper #login form#login-form button {
     display: inline;
-    width: 152px;
+    width: 140px;
     margin-top: 25px;
   }
 }
@@ -8988,31 +9842,27 @@ body {
 /* iPads (portrait) -------- */
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
-  .container #login form#login-form button {
-    width: 90px;
+  .wrapper #login .form-group {
+    max-width: 250px;
   }
 }
 
 /* Medium devices (desktops, 992px and up) */
 
 @media (min-width: 992px) {
-  .container #login form#login-form button {
-    width: 137px;
-  }
+  
 }
 
 /* iPads (landscape) -------- */
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
-  .container #login form#login-form button {
-    width: 75px;
+  .wrapper #login .form-group {
+    max-width: 250px;
   }
 }
 
 /* Large devices (large desktops, 1200px and up) */
 
 @media (min-width: 1200px) {
-  .container #login form#login-form button {
-    width: 97px;
-  }
+  
 }
