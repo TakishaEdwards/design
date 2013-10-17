@@ -14,10 +14,16 @@
 	<!-- build:js scripts/vendor/modernizr.js -->
 	<script src="bower_components/modernizr/modernizr.js"></script>
 	<!-- endbuild -->
+	<!-- build:js scripts/vendor/angular.js -->
+	<script src="bower_components/angular/angular.js"></script>
+	<!-- endbuild -->
+	<!-- build:js scripts/bootstrap.js -->
+	<script src="scripts/bootstrap.js"></script>
+	<!-- endbuild -->
 </head>
 <body>
 
-	<div class="wrapper">
+	<div class="wrapper login">
 
 		<div id="login" class="layout">
 
@@ -35,8 +41,9 @@
 							<label for="password">Password</label>
 							<input type="password" class="form-control" id="password" placeholder="Enter your password">
 						</div>
-						<!-- <button type="button" class="btn btn-primary btn-block">login</button> -->
-						<button type="button" class="btn btn-primary btn-block">login</button>
+						<div class="form-group">
+							<button type="button" class="btn btn-primary btn-block">login</button>
+						</div>
 					</form>
 				</div>
 			</div>

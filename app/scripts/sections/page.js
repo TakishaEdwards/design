@@ -1,10 +1,13 @@
 
 Pongo.Page = {
 
-	$create_btn: $('#create-page'),
+	$create_pg_btn: $('#create-page'),
+	$create_el_btn: $('#create-element'),
 	$page_lang: $('#change-lang'),
+	$page_id: Pongo.UI.pageId(),
 	$page_list: $('.dd'),
 	$el_list: $('.dl'),
+	$el_counter: $('.element-toggle span'),
 
 	pg_dropped_id: null,
 	el_dropped_id: null,
@@ -14,38 +17,75 @@ Pongo.Page = {
 							'<i class="icon-unchecked"></i>' +
 							' <%= name %>' +
 						'</div>' +
-						'<a href="page/edit/<%= id %>" class="<%= cls %>">' +
+						'<a href="<%= url %>" class="<%= cls %>">' +
 							'<i class="icon-chevron-right"></i>' +
 						'</a>' +
 					'</li>',
 
 	el_item_tpl:  	'<li class="dl-item" data-id="<%= id %>">' +
-						'<div class="dl-handle">' +
-							'<%= name %> ' +
-							'<i class="icon-unchecked"></i>' +							
+						'<div class="dl-handle">' +							
+							'<i class="icon-unchecked"></i>' +
+							' <%= name %> ' +
 						'</div>' +
-						'<a href="element/edit/<%= id %>" class="<%= cls %>">' +
-							'<i class="icon-chevron-right"></i>' +
+						'<a href="<%= url %>" class="<%= cls %>">' +
+							'<i class="icon-chevron-left"></i>' +
 						'</a>' +
 					'</li>',
 
-	printName: function() {
-		console.log('sections/pages.js loaded!');
+	/**
+	 * Create a new element
+	 * @return {void}
+	 */
+	createNewElement: function() {
+		var self = this;
+		self.$create_el_btn.on('click', function() {
+			var page_id = self.$page_id;
+			var lang = Pongo.UI.lang;
+			$.post(Pongo.UI.url('api/element/create'), {
+				page_id: page_id,
+				lang: lang
+			}, function(data) {
+				
+				if(data.status == 'success') {
+					var tpl = _.template(self.el_item_tpl);
+					var template = tpl(data);
+					var $el = $('.dl > ol');
+					$el.find('a.new').removeClass('new');
+					$el.prepend(template);
+					Pongo.UI.counterUpDown(data.counter);				
+					self.$el_list.nestable('serialize');
+					Pongo.UI.createAlertMessage(data, null, null);
+				} else {
+					Pongo.UI.createAlertMessage(data, null, null);
+				}
+				
+				setTimeout(function() {
+					Pongo.UI.resetBtn();
+				}, Pongo.UI.timeout);
+			}, 'json');
+		});
 	},
 
-	createPage: function() {
+	/**
+	 * Create a new page
+	 * @return {void}
+	 */
+	createNewPage: function() {
 		var self = this;
-		self.$create_btn.on('click', function() {
+		self.$create_pg_btn.on('click', function() {
 			var lang = Pongo.UI.lang;
-			$.post('api/page/create', {
+			$.post(Pongo.UI.url('api/page/create'), {
 				lang: lang
 			}, function(data) {
 				
 				if(data.status == 'success') {
 					var tpl = _.template(self.page_item_tpl);
 					var template = tpl(data);
-					$('.dd[rel=' + lang + '] > ol').prepend(template);
+					var $el = $('.dd[rel=' + lang + '] > ol');					
+					$el.find('a.new').removeClass('new');
+					$el.prepend(template);
 					self.$page_list.nestable('serialize');
+					Pongo.UI.createAlertMessage(data, null, null);
 				} else {
 					Pongo.UI.createAlertMessage(data, null, null);
 				}
@@ -80,6 +120,21 @@ Pongo.Page = {
 	},
 
 	/**
+	 * Manage element item icons update
+	 * @param  {json obj} page
+	 * @return {void}
+	 */
+	elementUpdate: function(element) {
+		$item = $('.dl-item[data-id='+element.id+'] > .dl-handle');
+		$item.find('span').html(element.name);
+		var $check = $item.find('.check');
+		if(element.checked && $check.hasClass('icon-unchecked'))
+			$check.removeClass('icon-unchecked').addClass('icon-check');
+		if(!element.checked && $check.hasClass('icon-check'))
+			$check.removeClass('icon-check').addClass('icon-unchecked');
+	},
+
+	/**
 	 * Reorder element actions
 	 * @param  {int} id
 	 * @return {void}
@@ -107,8 +162,9 @@ Pongo.Page = {
 	reorderElementPost: function() {
 		var self = this;
 		var pagesJson = self.reorderElementStringify();
-		$.post('api/element/order', {
-			pages: pagesJson
+		$.post(Pongo.UI.url('api/element/order'), {
+			elements: pagesJson,
+			page_id: self.$page_id
 		}, function(data) {
 			Pongo.UI.createAlertMessage(data, null, null);
 			setTimeout(function() {
@@ -185,7 +241,7 @@ Pongo.Page = {
 		// Change event
 		this.$page_lang.on('change', function() {
 			Pongo.UI.lang = self.$page_lang.val();
-			$.post('api/page/lang', {
+			$.post(Pongo.UI.url('api/page/lang'), {
 				lang: Pongo.UI.lang
 			}, function(data) {
 				self.$page_list.hide();
@@ -193,6 +249,58 @@ Pongo.Page = {
 				Pongo.UI.createAlertMessage(data, null, null);
 			}, 'json');
 		});
+	},
+
+	/**
+	 * Manage data errors on validateForm
+	 * @param  {json obj} errors
+	 * @return {void}
+	 */
+	pageError: function(errors) {
+		$.each(errors, function(key, value) {
+			$item = $('.form-group[rel='+key+']');
+			$item.removeClass('has-error');
+			$item.find('.help-block').remove();
+			$item.addClass('has-error');
+			$item.children('label').append('<span class="err"> - '+value+'</span>');
+		});
+	},
+
+	/**
+	 * Manage data informations on validateForm
+	 * @param  {json obj} infos (rel|msg)
+	 * @return {void}
+	 */
+	pageInform: function(infos) {
+		$.each(infos, function(key, value) {
+			$item = $('.form-group[rel='+key+']');
+			$item.removeClass('has-error');
+			$item.find('.help-block').remove();
+			$item.append('<span class="help-block">'+value+'</span>');
+		});
+	},
+
+	/**
+	 * Manage pageitem icons update
+	 * @param  {json obj} page
+	 * @return {void}
+	 */
+	pageUpdate: function(page) {
+		$('.slug-full').html(page.slug);
+		$item = $('.dd-item[data-id='+page.id+'] > .dd-handle');
+		$item.find('span').html(page.name);
+		var $home = $item.find('.icon-home');
+		if(page.home) {
+			$('.dd[rel=' + page.lang + '] > ol').find('.icon-home').hide();
+			$home.show();
+		} else {
+			$home.hide();
+		}
+		var $check = $item.find('.check');
+		if(page.checked && $check.hasClass('icon-unchecked'))
+			$check.removeClass('icon-unchecked').addClass('icon-check');
+		if(!page.checked && $check.hasClass('icon-check'))
+			$check.removeClass('icon-check').addClass('icon-unchecked');
 	},
 
 	/**
@@ -223,7 +331,7 @@ Pongo.Page = {
 	reorderPagePost: function() {
 		var self = this;
 		var pagesJson = self.reorderPageStringify();
-		$.post('api/page/order', {
+		$.post(Pongo.UI.url('api/page/order'), {
 			pages: pagesJson
 		}, function(data) {
 			Pongo.UI.createAlertMessage(data, null, null);
@@ -267,8 +375,19 @@ Pongo.Page = {
 	 */
 	toggleElements: function() {
 		var self = this;
-		$('.element-toggle').on('click', function() {
+		$('.right-toggle').on('click', function() {
 			Pongo.UI.$body.toggleClass('push-left');
+		});
+	},
+
+	/**
+	 * Show/hide page elements
+	 * @return {void}
+	 */
+	toggleOptions: function() {
+		var self = this;
+		$('.options-toggle').on('click', function() {
+			Pongo.UI.$body.toggleClass('push-right-options');
 		});
 	},
 
@@ -283,24 +402,36 @@ Pongo.Page = {
 		});
 	},
 
+	untoggleMenu: function() {
+		var self = this;
+		Pongo.UI.$overlay.on('click', function() {
+			Pongo.UI.$body.removeClass();
+			$('.close-modal').trigger('click');
+		});
+	},
+
 };
 
 
 $(function() {
 
-	Pongo.Page.printName();
+	Pongo.Page.toggleOptions();
 
 	Pongo.Page.toggleElements();
 
-	Pongo.Page.createPage();
-
 	Pongo.Page.togglePages();
+	
+	Pongo.Page.createNewPage();
+	
+	Pongo.Page.untoggleMenu();
 
 	Pongo.Page.pageNestablePlugin();
 
 	Pongo.Page.pageExpColl();
 
 	Pongo.Page.pageSelectLang();
+
+	Pongo.Page.createNewElement();
 
 	Pongo.Page.elementNestablePlugin();
 

@@ -101,6 +101,171 @@ ol.dl-list.dl-dragel {
 
 }
 
+.dn {
+
+	margin: 0;
+	padding: 0;
+	display: block;
+
+	ol {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+
+		li {
+			.li-file();
+		}
+
+	}
+
+}
+
+// LI FILE MIXIN
+
+.li-file {
+
+	position: relative;			
+
+	.dl-handle {
+		display: block;
+		height: auto;
+		min-height: 58px;
+		margin-top: 5px;
+		overflow: hidden;
+		padding: 4px 86px 4px 30px;
+		color: @gray;
+		font-size: .8em;
+		font-weight: 600;
+		background-color: #fff;
+		// border-left: 1px solid @brand-primary;
+		border-right: none;
+		text-align: left;
+		word-break: break-all;
+		.border-radius(4px);
+
+		// background-color: lime;
+
+		.cms-thumb {
+			position: absolute;
+			top: 4px;
+			right: 30px;
+			width: 50px;
+			height: 50px;
+			border: 2px solid @gray-light;
+			padding-top: 0;
+			font-size: 1.5em;
+			color: @gray;
+			text-transform: uppercase;
+			text-align: center;
+			.border-radius(4px);
+		}
+
+		span.cms-thumb {
+			padding-top: 10px;
+		}
+
+		div {
+			width: 55%;
+			position: absolute;
+			bottom: 4px;
+			padding: 2px 4px;
+			background-color: @gray-lighter;
+			.border-radius(4px);
+
+			.ext {
+				text-transform: uppercase;
+			}
+
+			.size {
+				position: absolute;
+				right: 6px;
+			}
+		}
+		
+		&.full {
+			
+			padding-right: 8px !important;
+			
+			big {
+				display: block;
+				position: relative;
+				font-size: 1.4em;
+				line-height: 20px;
+
+				a {
+					font-size: .7em;
+					text-decoration: none;
+					position: absolute;
+					top: 0;
+					right: 0;
+				}
+
+			}
+
+			p {
+				font-weight: 400;
+				margin: 0;
+
+				&.api {
+					display: none;
+					margin: 5px 0 0 0;
+
+					span {
+						display: block;
+
+						small {
+							float: right;
+						}
+					}
+				}
+			}
+
+		}		
+
+	}
+
+	& > a.edit {
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		width: 23px;
+		height: auto;
+		min-height: 58px;
+		padding-top: 19px;
+		padding-left: 7px;
+		color: #fff;
+		.border-radius(4px 0 0 4px);
+		background-color: @gray-light;
+
+		&:hover {
+			text-decoration: none;
+			background-color: darken(@gray-light, 5%);
+		}
+
+	}
+
+	& > a.remove {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 23px;
+		height: 58px;
+		padding-top: 18px;
+		padding-left: 6px;
+		color: #fff;
+		.border-radius(0 4px 4px 0);
+		background-color: @gray-light;
+
+		&:hover {
+			text-decoration: none;
+			background-color: @brand-danger;
+		}
+
+	}
+
+}
+
 // LI ELEMENT MIXIN
 
 .li-element {
@@ -117,18 +282,23 @@ ol.dl-list.dl-dragel {
 		padding-top: 7px;
 		padding-left: 5px;
 		color: @gray-dark;
+		cursor: pointer;
 	}			
 
 	.dl-handle {
 		display: block;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
 		margin-top: 5px;
-		padding: 4px 24px 4px 4px;
+		overflow: hidden;
+		padding: 4px 4px 4px 34px;
 		color: @gray;
 		font-weight: 600;
 		background-color: #fff;
-		border-left: 1px solid @brand-primary;
+		// border-left: 1px solid @brand-primary;
 		border-right: none;
-		text-align: right;
+		text-align: left;
 		.border-radius(4px);
 	}
 
@@ -149,7 +319,7 @@ ol.dl-list.dl-dragel {
 			background-color: darken(@gray-light, 5%);
 		}
 		
-		&.edit {
+		&.active {
 			background-color: @brand-primary;
 
 			&:hover {
@@ -199,37 +369,50 @@ ol.dl-list.dl-dragel {
 		padding-top: 7px;
 		padding-left: 5px;
 		color: @gray-dark;
+		cursor: pointer;
 	}			
 
 	.dd-handle {
 		display: block;
 		margin-top: 5px;
-		padding: 4px 4px 4px 24px;
+		overflow: hidden;
+		white-space: nowrap;
+		padding: 4px 28px 4px 24px;
 		color: @gray-dark;
 		font-weight: 600;
 		background-color: @gray-lighter;
-		border-right: 1px solid @brand-primary;
+		border-right: 1px solid @gray-lighter;
 		.border-radius(4px);
+
+		span {
+			display: inline-block;
+			max-width: 175px;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			vertical-align: top;
+		}
 	}
 
 	a {
 		position: absolute;
 		top: 0;
 		right: 0;
-		width: 23px;
+		width: 28px;
 		height: 28px;
 		padding-top: 5px;
 		padding-left: 8px;
 		color: #fff;
 		.border-radius(0 4px 4px 0);
 		background-color: @gray-light;
+		border-left: 5px solid @gray-lighter;
 
 		&:hover {
 			text-decoration: none;
 			background-color: darken(@gray-light, 5%);
 		}
 		
-		&.edit {
+		&.active {
 			background-color: @brand-primary;
 
 			&:hover {
@@ -258,6 +441,105 @@ ol.dl-list.dl-dragel {
 
 		i.icon-refresh {
 			margin-left: -2px;
+		}
+	}
+
+}
+
+// LI CLONE MIXIN
+
+.li-clone {
+
+
+	.clone-item {
+		position: relative;
+		display: block;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		margin-top: 5px;
+		overflow: hidden;
+		padding: 4px 8px;
+		background-color: #fff;
+		border-right: none;
+		text-align: left;
+		.border-radius(4px);
+		
+		input {
+			margin: 0;
+		}
+
+		label.page {
+
+			color: @gray;
+			font-weight: 600;
+			width: 80%;
+			margin: 0;
+			padding: 0;
+
+			input {
+				margin: 0 5px 0 0;
+				vertical-align: middle;
+			}			
+		}
+
+		label.self {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			margin: 0;
+			color: @gray-lighter;
+			font-size: .8em;
+			padding: 3px 6px;
+			line-height: 22px;
+			background-color: @gray-light;
+			.border-radius(0 2px 2px 0);
+
+			&.active {
+				background-color: @brand-primary;
+			}
+
+			input {
+				vertical-align: middle;
+			}
+		}
+	}	
+
+}
+
+
+// CLONE LIST
+
+.cloning {
+
+	margin: 0 0 @gutter 0;
+	padding: 0;
+	display: block;
+
+	ol {
+		overflow-y: auto;
+		height: auto;
+		
+		&.first {			
+			max-height: 232px;
+		}
+
+		&.second {
+			max-height: 135px;
+		}
+
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+		
+		li {
+			.li-clone();
+		}
+
+		ol {
+			list-style-type: none;
+			margin-left: @gutter;
 		}
 	}
 

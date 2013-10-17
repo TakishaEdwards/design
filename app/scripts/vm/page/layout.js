@@ -1,0 +1,5 @@
+$(function() {
+
+	Pongo.UI.changeMultiPanel();
+
+});

@@ -14,6 +14,9 @@
 	<!-- build:js scripts/vendor/modernizr.js -->
 	<script src="bower_components/modernizr/modernizr.js"></script>
 	<!-- endbuild -->
+	<!-- build:js scripts/bootstrap.js -->
+	<script src="scripts/bootstrap.js"></script>
+	<!-- endbuild -->
 </head>
 <body>
 
@@ -66,36 +69,170 @@
 
 				<div class="box">
 
-					<h2>New page <span>Home page / New page</span></h2>
+					<h2>New page</h2>
 
 				</div>
 
+				<button type="button" class="subbar-toggle options-toggle">
+					<i class="icon-cogs"></i>
+				</button>
+
 				<button type="button" class="subbar-toggle element-toggle">
 					<i class="icon-sort-by-attributes"></i>
+					<span>3</span>
 				</button>
 
 			</div>
 		</div>
 		
 		<div id="page" class="layout">
-			
-			
 
 			<div class="row">
 
 				<div id="page-panel" class="col-xs-12">
 					
-					
-
-					<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec ullamcorper nulla non metus auctor fringilla. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam porta sem malesuada magna mollis euismod. Curabitur blandit tempus porttitor. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Curabitur blandit tempus porttitor.
-
-					Nulla vitae elit libero, a pharetra augue. Vestibulum id ligula porta felis euismod semper. Maecenas faucibus mollis interdum. Donec ullamcorper nulla non metus auctor fringilla.
-
-					Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras mattis consectetur purus sit amet fermentum. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec id elit non mi porta gravida at eget metus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
-
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id ligula porta felis euismod semper. Nullam quis risus eget urna mollis ornare vel eu leo. Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam id dolor id nibh ultricies vehicula ut id elit. Aenean lacinia bibendum nulla sed consectetur.</p>
+					<form action="" role="form">
+						<div class="form-group">
+							<label for="name">Page name</label>
+							<input type="text" name="name" class="form-control" id="name">
+						</div>
+						<div class="form-group">
+							<label for="slug">Url slug</label>
+							<div class="input-group">
+								<span class="input-group-addon">/</span>
+								<input type="text" name="slug" class="form-control" id="slug">
+							</div>
+						</div>
+						<div class="form-group">
+							<span class="url-preview">/new-page-1/new-page-2</span>
+						</div>
+						<div class="form-group">
+							<label for="name">Editable by</label>
+							<select name="role_id" class="form-control" id="role_id">
+								<option value="">ALL</option>
+								<option value="">User</option>
+								<option value="">Editor</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="name">Accessible from</label>
+							<select name="access_level" class="form-control" id="access_level">
+								<option value="">ALL</option>
+								<option value="">User</option>
+								<option value="">Editor</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" value="">
+									Set as Home Page
+								</label>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" value="">
+									<span class="label label-success">online</span>
+								</label>
+							</div>
+						</div>
+						<div class="form-buttons">
+							<button type="button" class="btn btn-success btn-block">Salva</button>
+							<button type="button" class="btn btn-primary btn-block">Clona</button>
+							<button type="button" class="btn btn-danger btn-block pull-right">Elimina</button>
+						</div>
+					</form>
 
 				</div>
+
+			</div>
+
+			<div class="option-bar">
+				
+				<div class="option-body">
+					
+					<header>
+						
+						<h2>Page options</h2>
+
+					</header>
+					
+					<ul class="options list-unstyled">
+						<li class="active">
+							<a href="">Settings</a>
+						</li>
+						<li>
+							<a href="">Layout</a>
+						</li>
+						<li>
+							<a href="">Seo</a>
+						</li>
+						<li>
+							<a href="">Media</a>
+						</li>
+						<li>
+							<a href="">Linked pages</a>
+						</li>
+					</ul>
+
+				</div>
+
+			</div>
+
+			<div class="element-bar">
+		
+				<div class="element-body">
+					
+					<header>
+						
+						<h2>Page elements</h2>
+
+						<button id="create-element" class="btn btn-primary">
+							<i class="icon-plus-sign"> Element</i>
+						</button>
+
+					</header>
+
+					<div class="dl">
+					
+						<ol class="dl-list">
+					
+							<li class="dl-item" data-id="1">
+
+								<div class="dl-handle">
+									
+									Element 1 <i class="icon-check"></i>
+
+								</div>
+
+								<a href="page.html">
+									<i class="icon-chevron-left"></i>
+								</a>
+
+							</li>
+
+							<li class="dl-item" data-id="2">
+
+								<div class="dl-handle">
+									
+									Element 2 <i class="icon-check"></i>
+
+								</div>
+
+								<a href="page.html">
+									<i class="icon-chevron-left"></i>
+								</a>
+								
+							</li>
+
+						</ol>
+
+					</div>
+
+				</div>
+
 			</div>
 
 		</div>
@@ -284,59 +421,7 @@
 
 	</div>
 
-	<div class="element-bar">
-		
-		<div class="element-body">
-			
-			<header>
-				
-				<h2>Page elements</h2>
-
-				<button class="btn btn-primary">
-					<i class="icon-plus-sign"> Element</i>
-				</button>
-
-			</header>
-
-			<div class="dl">
-			
-				<ol class="dl-list">
-			
-					<li class="dl-item" data-id="1">
-
-						<div class="dl-handle">
-							
-							Element 1 <i class="icon-check"></i>
-
-						</div>
-
-						<a href="page.html">
-							<i class="icon-chevron-left"></i>
-						</a>
-
-					</li>
-
-					<li class="dl-item" data-id="2">
-
-						<div class="dl-handle">
-							
-							Element 2 <i class="icon-check"></i>
-
-						</div>
-
-						<a href="page.html">
-							<i class="icon-chevron-left"></i>
-						</a>
-						
-					</li>
-
-				</ol>
-
-			</div>
-
-		</div>
-
-	</div>
+	
 
 	<!--[if lt IE 7]>
 	  <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
