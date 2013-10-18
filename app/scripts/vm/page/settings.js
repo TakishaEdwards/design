@@ -42,6 +42,10 @@ $(function() {
 
 	ko.applyBindings(new Pongo.VM.Settings.settingsViewModel());
 
+	Pongo.UI.changeMultiPanel();
+	
 	Pongo.UI.checkAllClone();
+
+	Pongo.UI.toggleCheckbox();
 
 });

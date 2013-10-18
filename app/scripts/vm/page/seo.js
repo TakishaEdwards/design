@@ -22,4 +22,8 @@ $(function() {
 
 	ko.applyBindings(new Pongo.VM.Seo.seoViewModel(), $('#page-panel')[0]);
 
+	Pongo.UI.changeMultiPanel();
+
+	Pongo.UI.toggleCheckbox();
+
 });

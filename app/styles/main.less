@@ -465,6 +465,9 @@ body {
 	margin: 0;
 	padding: 0;
 
+	width: 100%;
+	height: @navbar-h;
+
 	.navbar-header {
 		text-align: center;
 		.navbar-brand {
@@ -1329,23 +1332,29 @@ and (orientation : landscape) {
 			padding-right: @treshold + @gutter !important;
 
 			.element-toggle {
+				
 				display: none;
+
 			}
 		}
 		
 		#page {
 			
 			#page-panel {
+				
 				padding-right: @treshold + @gutter !important;
 
 				#overlay {
+
 					position: fixed !important;
+
 				}
 			}
 
 		}		
 
 		.right-bar {
+
 			padding-top: @navbar-h;
 			right: 0;
 
@@ -1361,6 +1370,16 @@ and (orientation : landscape) {
 	.push-right {
 		
 		.wrapper {
+			
+			#page {
+			
+				#page-panel {
+
+					padding-right: @gutter !important;
+
+				}
+
+			}
 
 			.right-bar {
 

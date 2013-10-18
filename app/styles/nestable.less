@@ -544,3 +544,74 @@ ol.dl-list.dl-dragel {
 	}
 
 }
+
+// LINKED PAGES
+
+.linked-pages {
+	
+	margin: 0;
+	padding: 0;
+
+	ol {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+
+		ol {
+			list-style-type: none;
+			margin-left: 20px;
+		}
+
+		li {
+				
+			.li-linked();
+
+		}
+
+		.dd-placeholder {
+			margin-top: 5px;
+			border: 1px dashed #fff;
+			.border-radius(4px);
+			background-color: @brand-info;
+		}
+
+	}
+
+}
+
+// LI PAGE MIXIN
+
+.li-linked {
+
+	position: relative;			
+
+	.dd-handle {
+		display: block;
+		height: 28px;
+		margin-top: 5px;
+		overflow: hidden;
+		white-space: nowrap;
+		padding: 4px 8px;
+		color: @gray-dark;
+		font-weight: 600;
+		background-color: #fff;
+		border-right: 1px solid @gray-lighter;
+		.border-radius(4px);
+
+		label {
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 28px;
+			height: 28px;
+			color: #fff;
+			padding-top: 4px;
+			padding-left: 8px;
+			.border-radius(0 4px 4px 0);
+			background-color: @gray-light;
+		}
+	}
+
+	
+
+}

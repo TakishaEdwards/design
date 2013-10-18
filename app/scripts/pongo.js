@@ -350,6 +350,10 @@ Pongo.UI = {
 		}
 	},
 
+	/**
+	 * Highlight the layout zone
+	 * @return {void}
+	 */
 	highlightLayout: function() {
 		var self = this;
 		if($('#layout-preview').length > 0) {
@@ -382,6 +386,10 @@ Pongo.UI = {
 		}
 	},
 
+	/**
+	 * Check if the browser is mobile
+	 * @return {bool}
+	 */
 	mobileBrowser: function() {
 		return (jQuery.browser.mobile) ? true : false;
 	},
@@ -442,6 +450,10 @@ Pongo.UI = {
 		});
 	},
 
+	/**
+	 * Set min height og TinyMce
+	 * @param {[type]} n [description]
+	 */
 	setWysiwygMinHeight: function(n) {
 		var self = this;
 		var win_h = self.viewPortSize('h');
@@ -465,10 +477,41 @@ Pongo.UI = {
 		});
 	},
 
+	/**
+	 * Toggle Markers API
+	 * @return {void}
+	 */
 	toggleApi: function() {
 		$('.api-toggle').on('click', function(e) {
 			e.preventDefault();
 			$(this).parents('.dl-handle').find('.api').toggle();
+		});
+	},
+
+	/**
+	 * Toggle ajax checkboxes
+	 * @return {void}
+	 */
+	toggleCheckbox: function() {
+		var self = this;
+		$('.page_rel').on('click', function() {
+			var $this = $(this);
+			var url = $this.parents('form').attr('action');
+			var rel_id = $this.val();
+			var action = (this.checked) ? 'add' : 'remove';
+			$this.hide().parent('label').prepend(self.loading_tpl);
+			$.post(url, {
+				page_id: self.pageId(),
+				rel_id: rel_id,
+				action: action
+			}, function(data) {
+				if(data.status) {
+					setTimeout(function() {
+						$this.prev().remove();
+						$this.show();
+					}, self.timeout);
+				}
+			}, 'json');
 		});
 	},
 
