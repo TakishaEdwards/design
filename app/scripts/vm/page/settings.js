@@ -43,6 +43,10 @@ $(function() {
 	ko.applyBindings(new Pongo.VM.Settings.settingsViewModel());
 
 	Pongo.UI.changeMultiPanel();
+
+	Pongo.Page.createNewElement();
+
+	Pongo.Page.elementNestablePlugin();
 	
 	Pongo.UI.checkAllClone();
 

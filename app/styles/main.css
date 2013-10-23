@@ -9089,6 +9089,12 @@ ol.dd-list.dd-dragel li a i.icon-refresh {
           background-clip: padding-box;
 }
 
+.dl ol li .dl-handle span.label {
+  float: right;
+  margin-top: 4px;
+  font-size: .6em;
+}
+
 .dl ol li a {
   position: absolute;
   top: 0;
@@ -9200,6 +9206,12 @@ ol.dl-list.dl-dragel li .dl-handle {
   -webkit-background-clip: padding-box;
      -moz-background-clip: padding;
           background-clip: padding-box;
+}
+
+ol.dl-list.dl-dragel li .dl-handle span.label {
+  float: right;
+  margin-top: 4px;
+  font-size: .6em;
 }
 
 ol.dl-list.dl-dragel li a {
@@ -9616,6 +9628,12 @@ ol.dl-list.dl-dragel li a i.icon-refresh {
   -webkit-background-clip: padding-box;
      -moz-background-clip: padding;
           background-clip: padding-box;
+}
+
+.li-element .dl-handle span.label {
+  float: right;
+  margin-top: 4px;
+  font-size: .6em;
 }
 
 .li-element a {
@@ -10116,6 +10134,10 @@ body {
   left: 50%;
   width: 240px;
   margin-left: -120px;
+}
+
+.wrapper #page {
+  height: inherit;
 }
 
 .wrapper #page #page-panel {
@@ -10775,7 +10797,7 @@ body {
   text-transform: uppercase;
 }
 
-.right-bar .right-body header #create-element {
+.right-bar .right-body header button.btn {
   font-weight: 400;
   text-transform: capitalize;
 }
@@ -11222,6 +11244,9 @@ body {
     right: 0;
     padding-top: 51px;
   }
+  .wrapper .right-bar ~ .subbar {
+    padding-right: 310px !important;
+  }
   .wrapper .right-bar .right-body {
     padding: 10px !important;
     border: 0;
@@ -11292,6 +11317,9 @@ body {
   }
   .push-right .wrapper .right-bar {
     right: -295px;
+  }
+  .push-right .wrapper .right-bar ~ .subbar {
+    padding-right: 15px !important;
   }
   .push-right .wrapper .right-bar ~ #page-panel {
     padding-right: 15px !important;

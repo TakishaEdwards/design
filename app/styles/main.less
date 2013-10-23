@@ -118,6 +118,8 @@ body {
 
 
 	#page {
+		
+		height: inherit;
 
 		#page-panel {
 
@@ -911,7 +913,7 @@ body {
 
 			}
 
-			#create-element {
+			button.btn {
 
 				font-weight: 400;
 				text-transform: capitalize;
@@ -1437,6 +1439,12 @@ and (orientation : portrait) {
 			padding-top: @navbar-h;
 			right: 0;
 
+			& ~ .subbar {
+
+				padding-right: @treshold + @gutter !important;
+
+			}
+
 			.right-body {
 
 				padding: 10px !important;
@@ -1600,6 +1608,12 @@ and (orientation : portrait) {
 			.right-bar {
 
 				right: -@treshold;
+
+				& ~ .subbar {
+
+					padding-right: @gutter !important;
+
+				}
 
 				& ~ #page-panel {
 

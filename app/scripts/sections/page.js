@@ -1,4 +1,3 @@
-
 Pongo.Page = {
 
 	$create_pg_btn: $('#create-page'),
@@ -23,7 +22,7 @@ Pongo.Page = {
 					'</li>',
 
 	el_item_tpl:  	'<li class="dl-item" data-id="<%= id %>">' +
-						'<div class="dl-handle">' +							
+						'<div class="dl-handle">' +
 							'<i class="icon-unchecked"></i>' +
 							' <%= name %> ' +
 						'</div>' +
@@ -52,7 +51,7 @@ Pongo.Page = {
 					var $el = $('.dl > ol');
 					$el.find('a.new').removeClass('new');
 					$el.prepend(template);
-					Pongo.UI.counterUpDown(data.counter);				
+					Pongo.UI.counterUpDown(data.counter);
 					self.$el_list.nestable('serialize');
 					Pongo.UI.createAlertMessage(data, null, null);
 				} else {
@@ -161,7 +160,7 @@ Pongo.Page = {
 	 */
 	reorderElementPost: function() {
 		var self = this;
-		var pagesJson = self.reorderElementStringify();
+		var pagesJson = self.reorderElementStringify(this.$el_list);
 		$.post(Pongo.UI.url('api/element/order'), {
 			elements: pagesJson,
 			page_id: self.$page_id
@@ -188,9 +187,9 @@ Pongo.Page = {
 	 * Stringify JSON on reorder elements
 	 * @return {string} Json object stringified
 	 */
-	reorderElementStringify: function() {
+	reorderElementStringify: function(list) {
 		if(JSON && this.$el_list) {
-			var serialObj = $('.dl').nestable('serialize');
+			var serialObj = list.nestable('serialize');
 			return JSON.stringify(serialObj);
 		} else {
 			var data = {
@@ -430,9 +429,5 @@ $(function() {
 	Pongo.Page.pageExpColl();
 
 	Pongo.Page.pageSelectLang();
-
-	Pongo.Page.createNewElement();
-
-	Pongo.Page.elementNestablePlugin();
 
 });

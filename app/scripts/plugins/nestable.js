@@ -36,6 +36,7 @@
 			itemNodeName    : 'li',
 			rootClass       : 'dd',
 			listClass       : 'dd-list',
+			notClass		: 'dd-not',
 			itemClass       : 'dd-item',
 			dragClass       : 'dd-dragel',            
 			handleClass     : 'dd-handle',
@@ -248,6 +249,9 @@
 			var mouse    = this.mouse,
 				target   = $(e.target),
 				dragItem = target.parents(this.options.itemNodeName).first();
+
+			// if not move class, stop drag
+			if(dragItem.hasClass(this.options.notClass)) return;
 
 			this.placeEl.css('height', dragItem.height());
 
