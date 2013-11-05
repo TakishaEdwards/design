@@ -126,6 +126,8 @@ $(function() {
 	Pongo.UI.changeMultiPanel();
 	
 	Pongo.UI.toggleApi();
+
+	Pongo.UI.toggleIsValid();
 	
 	Pongo.UI.activePopup();
 

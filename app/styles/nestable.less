@@ -137,13 +137,10 @@ ol.dl-list.dl-dragel {
 		font-size: .8em;
 		font-weight: 600;
 		background-color: #fff;
-		// border-left: 1px solid @brand-primary;
 		border-right: none;
 		text-align: left;
 		word-break: break-all;
 		.border-radius(4px);
-
-		// background-color: lime;
 
 		.cms-thumb {
 			position: absolute;
@@ -292,20 +289,38 @@ ol.dl-list.dl-dragel {
 		text-overflow: ellipsis;
 		margin-top: 5px;
 		overflow: hidden;
-		padding: 4px 4px 4px 34px;
+		padding: 4px 28px;
 		color: @gray;
 		font-weight: 600;
 		background-color: #fff;
-		// border-left: 1px solid @brand-primary;
 		border-right: none;
 		text-align: left;
 		.border-radius(4px);
 
-		span.label {
-			float: right;
-			margin-top: 4px;
-			font-size: .6em;
+		&.full {
+			
+			padding-right: 4px !important;
+			
+			span.label {
+				float: right;
+				margin-top: 4px;
+				font-size: .6em;
+			}
 		}
+
+	}
+
+	label {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 23px;
+		height: 28px;
+		color: #fff;
+		padding-top: 4px;
+		padding-left: 6px;
+		.border-radius(0 4px 4px 0);
+		background-color: @gray-light;
 	}
 
 	a {
@@ -407,7 +422,7 @@ ol.dl-list.dl-dragel {
 		width: 28px;
 		height: 28px;
 		padding-top: 5px;
-		padding-left: 8px;
+		padding-left: 7px;
 		color: #fff;
 		.border-radius(0 4px 4px 0);
 		background-color: @gray-light;
@@ -597,7 +612,7 @@ ol.dl-list.dl-dragel {
 		margin-top: 5px;
 		overflow: hidden;
 		white-space: nowrap;
-		padding: 4px 8px;
+		padding: 4px 28px 4px 8px;
 		color: @gray-dark;
 		font-weight: 600;
 		background-color: #fff;
@@ -608,13 +623,66 @@ ol.dl-list.dl-dragel {
 			position: absolute;
 			top: 0;
 			right: 0;
-			width: 28px;
+			width: 23px;
 			height: 28px;
 			color: #fff;
 			padding-top: 4px;
-			padding-left: 8px;
+			padding-left: 6px;
 			.border-radius(0 4px 4px 0);
 			background-color: @gray-light;
 		}
+	}
+
+	a {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 23px;
+		height: 28px;
+		padding-top: 5px;
+		padding-left: 7px;
+		color: #fff;
+		.border-radius(4px 0 0 4px);
+		background-color: @gray-light;
+
+		&:hover {
+			text-decoration: none;
+			background-color: darken(@gray-light, 5%);
+		}
+		
+		&.active {
+			background-color: @brand-primary;
+
+			&:hover {
+				background-color: darken(@brand-primary, 5%);
+			}
+
+		}
+
+		&.new {
+			background-color: @brand-success;
+
+			&:hover {
+				background-color: darken(@brand-success, 5%);
+			}
+
+		}
+
+		&.save {
+			background-color: @brand-warning;
+
+			&:hover {
+				background-color: darken(@brand-warning, 5%);
+			}
+
+		}
+
+		i.icon-refresh {
+			margin-left: -2px;
+		}
+	}
+
+	a + .dd-handle {
+		padding-left: 34px;
 	}
 }

@@ -3,20 +3,13 @@ Pongo.Role = {
 	$role_list: $('.dl'),
 	$create_role_btn: $('#create-role'),
 
-	role_item_tpl: 	'<li class="dl-item" data-id="<%= id %>">' +
-						
-						'<div class="dl-handle">' +
-						
-							'<span><%= name %></span>' +
-						
-						'</div>' +
-						
-						'<a href="<%= url %>" class="<%= cls %>">' +
-						
-							'<i class="icon-chevron-left"></i>' +
-						
+	role_item_tpl: 	'<li class="dl-item" data-id="<%= id %>">' +						
+						'<div class="dl-handle full">' +						
+							'<span><%= name %></span>' +						
+						'</div>' +						
+						'<a href="<%= url %>" class="<%= cls %>">' +						
+							'<i class="icon-chevron-left"></i>' +						
 						'</a>' +
-
 					'</li>',
 
 	/**
@@ -93,6 +86,16 @@ Pongo.Role = {
 		});
 	},
 
+	/**
+	 * Manage user update
+	 * @param  {json obj} page
+	 * @return {void}
+	 */
+	roleUpdate: function(role) {
+		$item = $('.dl-list').find('li[data-id='+role.id+'] > .dl-handle');
+		$item.find('span').not('.label').html(role.name);
+	},
+
 };
 
 $(function() {
@@ -100,5 +103,8 @@ $(function() {
 	Pongo.Role.roleNestablePlugin();
 
 	Pongo.Role.createNewRole();
+
+	Pongo.UI.paginateList('.dd-item');
+
 
 });

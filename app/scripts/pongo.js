@@ -21,6 +21,7 @@ Pongo.UI = {
 	$close_modal: $('.close-modal'),
 	$left_toggle: $('.left-toggle'),
 	$right_toggle: $('.right-toggle'),
+	$right_body: $('.right-body'),
 	$toolbar: $('.toolbar'),
 	$multipanel: $('.multi-panel'),
 	$popup: $('.popup'),
@@ -166,6 +167,7 @@ Pongo.UI = {
 			var $link = $this.find('a');
 			$link.on('click', function(e) {
 				e.preventDefault();
+				self.$right_body.animate({ scrollTop: 0 }, 0);
 				$li.removeClass('active');
 				$this.addClass('active');
 				self.$multipanel.animate({left: -(index * self.multipanel_w)}, 200);
@@ -404,6 +406,23 @@ Pongo.UI = {
 	},
 
 	/**
+	 * Paginate items in list
+	 * @param  {string} item
+	 * @return {void}
+	 */
+	paginateList: function(item) {
+		$.ias({
+			scrollContainer: this.$right_body,
+			container : '.paginate',
+			item: item,
+			pagination: '.pagination',
+			next: '.pagination li:last-child a',
+			history: false,
+			loader: ''
+		});
+	},
+
+	/**
 	 * Redirect to url
 	 * @return {void}
 	 */
@@ -494,7 +513,7 @@ Pongo.UI = {
 	 */
 	toggleCheckbox: function() {
 		var self = this;
-		$('.page_rel').on('click', function() {
+		$('.linked-pages').on('click', '.page_rel', function() {
 			var $this = $(this);
 			var url = $this.parents('form').attr('action');
 			var rel_id = $this.val();
@@ -516,6 +535,43 @@ Pongo.UI = {
 	},
 
 	/**
+	 * Toggle ajax is_valid checkboxes
+	 * @return {void}
+	 */
+	toggleIsValid: function() {
+		var self = this;
+		$('.valid').on('click', '.is_valid', function() {
+			var $this = $(this);
+			var url = $this.parents('form').attr('action');
+			var item_id = $this.val();
+			var action = (this.checked) ? 1 : 0;
+			$this.hide().parent('label').prepend(self.loading_tpl);
+			$.post(url, {
+				item_id: item_id,
+				action: action
+			}, function(data) {
+				if(data.status) {
+					setTimeout(function() {
+						$this.prev().remove();
+						$this.show();
+					}, self.timeout);
+				}
+			}, 'json');
+		});
+	},
+
+	/**
+	 * Toggle search form
+	 * @return {void}
+	 */
+	toggleSearch: function() {
+		$('#search-toggle').on('click', function(e) {
+			e.preventDefault();
+			$('input[type="search"]').toggle().focus();
+		});
+	},
+
+	/**
 	 * Process form submission
 	 * 
 	 * @param  {json obj} data 
@@ -529,6 +585,8 @@ Pongo.UI = {
 		if(data.infos) Pongo.Page.pageInform(data.infos);
 		if(data.page) Pongo.Page.pageUpdate(data.page);
 		if(data.element) Pongo.Page.elementUpdate(data.element);
+		if(data.role) Pongo.Role.roleUpdate(data.role);
+		if(data.user) Pongo.User.userUpdate(data.user);
 		if(data.item) this.listItemAdd(data.item);
 		if(data.remove) this.listItemRemove(data.remove);
 		this.createAlertMessage(data);

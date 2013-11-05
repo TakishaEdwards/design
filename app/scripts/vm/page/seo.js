@@ -24,10 +24,12 @@ $(function() {
 
 	Pongo.UI.changeMultiPanel();
 
+	Pongo.UI.toggleCheckbox();
+
+	Pongo.UI.toggleIsValid();
+
 	Pongo.Page.createNewElement();
 
 	Pongo.Page.elementNestablePlugin();
-
-	Pongo.UI.toggleCheckbox();
-
+	
 });

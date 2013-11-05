@@ -23,9 +23,11 @@ Pongo.Page = {
 
 	el_item_tpl:  	'<li class="dl-item" data-id="<%= id %>">' +
 						'<div class="dl-handle">' +
-							'<i class="icon-unchecked"></i>' +
 							' <%= name %> ' +
 						'</div>' +
+						'<label>' +
+							'<input type="checkbox" value="<%= id %>" class="is_valid">' +
+						'</label>' +
 						'<a href="<%= url %>" class="<%= cls %>">' +
 							'<i class="icon-chevron-left"></i>' +
 						'</a>' +
@@ -48,7 +50,7 @@ Pongo.Page = {
 				if(data.status == 'success') {
 					var tpl = _.template(self.el_item_tpl);
 					var template = tpl(data);
-					var $el = $('.dl > ol');
+					var $el = $('.dl ol');
 					$el.find('a.new').removeClass('new');
 					$el.prepend(template);
 					Pongo.UI.counterUpDown(data.counter);
@@ -126,11 +128,6 @@ Pongo.Page = {
 	elementUpdate: function(element) {
 		$item = $('.dl-item[data-id='+element.id+'] > .dl-handle');
 		$item.find('span').html(element.name);
-		var $check = $item.find('.check');
-		if(element.checked && $check.hasClass('icon-unchecked'))
-			$check.removeClass('icon-unchecked').addClass('icon-check');
-		if(!element.checked && $check.hasClass('icon-check'))
-			$check.removeClass('icon-check').addClass('icon-unchecked');
 	},
 
 	/**

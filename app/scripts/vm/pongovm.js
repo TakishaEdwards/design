@@ -11,5 +11,15 @@ Pongo.VM = {
 		return max_len-len;
 	},
 
+	minChars: function(observed, min_len) {
+		var len = observed().length;
+		var text = observed();
+
+		if(len >= min_len) {
+			return 'OK';
+		}
+		return len;
+	},
+
 
 };

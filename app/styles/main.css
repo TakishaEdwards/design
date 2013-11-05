@@ -8874,7 +8874,7 @@ a .icon-flip-vertical:before {
   width: 28px;
   height: 28px;
   padding-top: 5px;
-  padding-left: 8px;
+  padding-left: 7px;
   color: #fff;
   background-color: #999999;
   border-left: 5px solid #eeeeee;
@@ -8995,7 +8995,7 @@ ol.dd-list.dd-dragel li a {
   width: 28px;
   height: 28px;
   padding-top: 5px;
-  padding-left: 8px;
+  padding-left: 7px;
   color: #fff;
   background-color: #999999;
   border-left: 5px solid #eeeeee;
@@ -9071,7 +9071,7 @@ ol.dd-list.dd-dragel li a i.icon-refresh {
 
 .dl ol li .dl-handle {
   display: block;
-  padding: 4px 4px 4px 34px;
+  padding: 4px 28px;
   margin-top: 5px;
   overflow: hidden;
   font-weight: 600;
@@ -9089,10 +9089,32 @@ ol.dd-list.dd-dragel li a i.icon-refresh {
           background-clip: padding-box;
 }
 
-.dl ol li .dl-handle span.label {
+.dl ol li .dl-handle.full {
+  padding-right: 4px !important;
+}
+
+.dl ol li .dl-handle.full span.label {
   float: right;
   margin-top: 4px;
   font-size: .6em;
+}
+
+.dl ol li label {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 23px;
+  height: 28px;
+  padding-top: 4px;
+  padding-left: 6px;
+  color: #fff;
+  background-color: #999999;
+  -webkit-border-radius: 0 4px 4px 0;
+     -moz-border-radius: 0 4px 4px 0;
+          border-radius: 0 4px 4px 0;
+  -webkit-background-clip: padding-box;
+     -moz-background-clip: padding;
+          background-clip: padding-box;
 }
 
 .dl ol li a {
@@ -9190,7 +9212,7 @@ ol.dl-list.dl-dragel li.dl-item > i {
 
 ol.dl-list.dl-dragel li .dl-handle {
   display: block;
-  padding: 4px 4px 4px 34px;
+  padding: 4px 28px;
   margin-top: 5px;
   overflow: hidden;
   font-weight: 600;
@@ -9208,10 +9230,32 @@ ol.dl-list.dl-dragel li .dl-handle {
           background-clip: padding-box;
 }
 
-ol.dl-list.dl-dragel li .dl-handle span.label {
+ol.dl-list.dl-dragel li .dl-handle.full {
+  padding-right: 4px !important;
+}
+
+ol.dl-list.dl-dragel li .dl-handle.full span.label {
   float: right;
   margin-top: 4px;
   font-size: .6em;
+}
+
+ol.dl-list.dl-dragel li label {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 23px;
+  height: 28px;
+  padding-top: 4px;
+  padding-left: 6px;
+  color: #fff;
+  background-color: #999999;
+  -webkit-border-radius: 0 4px 4px 0;
+     -moz-border-radius: 0 4px 4px 0;
+          border-radius: 0 4px 4px 0;
+  -webkit-background-clip: padding-box;
+     -moz-background-clip: padding;
+          background-clip: padding-box;
 }
 
 ol.dl-list.dl-dragel li a {
@@ -9612,7 +9656,7 @@ ol.dl-list.dl-dragel li a i.icon-refresh {
 
 .li-element .dl-handle {
   display: block;
-  padding: 4px 4px 4px 34px;
+  padding: 4px 28px;
   margin-top: 5px;
   overflow: hidden;
   font-weight: 600;
@@ -9630,10 +9674,32 @@ ol.dl-list.dl-dragel li a i.icon-refresh {
           background-clip: padding-box;
 }
 
-.li-element .dl-handle span.label {
+.li-element .dl-handle.full {
+  padding-right: 4px !important;
+}
+
+.li-element .dl-handle.full span.label {
   float: right;
   margin-top: 4px;
   font-size: .6em;
+}
+
+.li-element label {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 23px;
+  height: 28px;
+  padding-top: 4px;
+  padding-left: 6px;
+  color: #fff;
+  background-color: #999999;
+  -webkit-border-radius: 0 4px 4px 0;
+     -moz-border-radius: 0 4px 4px 0;
+          border-radius: 0 4px 4px 0;
+  -webkit-background-clip: padding-box;
+     -moz-background-clip: padding;
+          background-clip: padding-box;
 }
 
 .li-element a {
@@ -9738,7 +9804,7 @@ ol.dl-list.dl-dragel li a i.icon-refresh {
   width: 28px;
   height: 28px;
   padding-top: 5px;
-  padding-left: 8px;
+  padding-left: 7px;
   color: #fff;
   background-color: #999999;
   border-left: 5px solid #eeeeee;
@@ -9959,7 +10025,7 @@ ol.dl-list.dl-dragel li a i.icon-refresh {
 .linked-pages ol li .dd-handle {
   display: block;
   height: 28px;
-  padding: 4px 8px;
+  padding: 4px 28px 4px 8px;
   margin-top: 5px;
   overflow: hidden;
   font-weight: 600;
@@ -9979,10 +10045,10 @@ ol.dl-list.dl-dragel li a i.icon-refresh {
   position: absolute;
   top: 0;
   right: 0;
-  width: 28px;
+  width: 23px;
   height: 28px;
   padding-top: 4px;
-  padding-left: 8px;
+  padding-left: 6px;
   color: #fff;
   background-color: #999999;
   -webkit-border-radius: 0 4px 4px 0;
@@ -9991,6 +10057,61 @@ ol.dl-list.dl-dragel li a i.icon-refresh {
   -webkit-background-clip: padding-box;
      -moz-background-clip: padding;
           background-clip: padding-box;
+}
+
+.linked-pages ol li a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 23px;
+  height: 28px;
+  padding-top: 5px;
+  padding-left: 7px;
+  color: #fff;
+  background-color: #999999;
+  -webkit-border-radius: 4px 0 0 4px;
+     -moz-border-radius: 4px 0 0 4px;
+          border-radius: 4px 0 0 4px;
+  -webkit-background-clip: padding-box;
+     -moz-background-clip: padding;
+          background-clip: padding-box;
+}
+
+.linked-pages ol li a:hover {
+  text-decoration: none;
+  background-color: #8c8c8c;
+}
+
+.linked-pages ol li a.active {
+  background-color: #428bca;
+}
+
+.linked-pages ol li a.active:hover {
+  background-color: #357ebd;
+}
+
+.linked-pages ol li a.new {
+  background-color: #5cb85c;
+}
+
+.linked-pages ol li a.new:hover {
+  background-color: #4cae4c;
+}
+
+.linked-pages ol li a.save {
+  background-color: #f0ad4e;
+}
+
+.linked-pages ol li a.save:hover {
+  background-color: #eea236;
+}
+
+.linked-pages ol li a i.icon-refresh {
+  margin-left: -2px;
+}
+
+.linked-pages ol li a + .dd-handle {
+  padding-left: 34px;
 }
 
 .linked-pages ol .dd-placeholder {
@@ -10012,7 +10133,7 @@ ol.dl-list.dl-dragel li a i.icon-refresh {
 .li-linked .dd-handle {
   display: block;
   height: 28px;
-  padding: 4px 8px;
+  padding: 4px 28px 4px 8px;
   margin-top: 5px;
   overflow: hidden;
   font-weight: 600;
@@ -10032,10 +10153,10 @@ ol.dl-list.dl-dragel li a i.icon-refresh {
   position: absolute;
   top: 0;
   right: 0;
-  width: 28px;
+  width: 23px;
   height: 28px;
   padding-top: 4px;
-  padding-left: 8px;
+  padding-left: 6px;
   color: #fff;
   background-color: #999999;
   -webkit-border-radius: 0 4px 4px 0;
@@ -10044,6 +10165,61 @@ ol.dl-list.dl-dragel li a i.icon-refresh {
   -webkit-background-clip: padding-box;
      -moz-background-clip: padding;
           background-clip: padding-box;
+}
+
+.li-linked a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 23px;
+  height: 28px;
+  padding-top: 5px;
+  padding-left: 7px;
+  color: #fff;
+  background-color: #999999;
+  -webkit-border-radius: 4px 0 0 4px;
+     -moz-border-radius: 4px 0 0 4px;
+          border-radius: 4px 0 0 4px;
+  -webkit-background-clip: padding-box;
+     -moz-background-clip: padding;
+          background-clip: padding-box;
+}
+
+.li-linked a:hover {
+  text-decoration: none;
+  background-color: #8c8c8c;
+}
+
+.li-linked a.active {
+  background-color: #428bca;
+}
+
+.li-linked a.active:hover {
+  background-color: #357ebd;
+}
+
+.li-linked a.new {
+  background-color: #5cb85c;
+}
+
+.li-linked a.new:hover {
+  background-color: #4cae4c;
+}
+
+.li-linked a.save {
+  background-color: #f0ad4e;
+}
+
+.li-linked a.save:hover {
+  background-color: #eea236;
+}
+
+.li-linked a i.icon-refresh {
+  margin-left: -2px;
+}
+
+.li-linked a + .dd-handle {
+  padding-left: 34px;
 }
 
 html {
@@ -10136,10 +10312,6 @@ body {
   margin-left: -120px;
 }
 
-.wrapper #page {
-  height: inherit;
-}
-
 .wrapper #page #page-panel {
   position: relative;
   height: inherit;
@@ -10226,6 +10398,18 @@ body {
 .wrapper #page #page-panel form .control-label .counter {
   float: right;
   color: #999999;
+}
+
+.wrapper #page #page-panel form .control-label .counter.hide {
+  display: none;
+}
+
+.wrapper #page #page-panel form .control-label .counter.show {
+  display: inline !important;
+}
+
+.wrapper #page #page-panel form .control-label .counter.red {
+  color: #d9534f;
 }
 
 .wrapper #page #page-panel form .has-error .control-label {
@@ -10527,6 +10711,11 @@ body {
   font-size: 1.4em;
 }
 
+.subbar .subbar-toggle.user-toggle {
+  padding: 8px 3px 8px 3px;
+  font-size: 1.4em;
+}
+
 .option-bar ~ .subbar {
   padding-left: 40px;
 }
@@ -10802,6 +10991,18 @@ body {
   text-transform: capitalize;
 }
 
+.right-bar .right-body header #search-toggle {
+  position: absolute;
+  bottom: 15px;
+  left: 5px;
+  text-decoration: none;
+}
+
+.right-bar .right-body header #search-toggle i {
+  font-size: 1.4em;
+  color: #555555;
+}
+
 .right-bar .right-body header ul {
   padding: 10px 5px 0;
   text-align: left !important;
@@ -10848,6 +11049,11 @@ body {
   padding-left: 18px;
 }
 
+.right-bar .right-body input[type="search"] {
+  display: none;
+  margin-bottom: 7.5px;
+}
+
 .right-bar .right-body .multi-panel {
   position: absolute;
   left: 0;
@@ -10890,6 +11096,7 @@ body {
 
 .right-bar footer ul.toolbar li {
   display: table-cell;
+  width: inherit;
   height: 100%;
   margin: 0;
 }
