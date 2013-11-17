@@ -114,18 +114,18 @@
 					var fileSize = Math.round(file.size / 1024);
 					var ext = fileName.split('.').pop().toLowerCase();
 
-					var $el_icon = $("<i></i>").addClass('icon-arrow-right');
+					var $el_icon = $("<i></i>").addClass('fa fa-arrow-right');
 					var $el_size = $("<span>("+fileSize+" kb)</span>");
 					
 					// Check mimes
 					if(s.allowedTypes != "*" && jQuery.inArray(ext,fileExtensions) < 0)	{
-						$el_icon.removeClass().addClass('icon-exclamation-sign error');
+						$el_icon.removeClass().addClass('fa fa-exclamation-circle error');
 						$el.addClass('error');
 					}
 
 					// Check file size
 					if(fileSize * 1024 > Pongo.max_upload_size) {
-						$el_icon.removeClass().addClass('icon-exclamation-sign error');
+						$el_icon.removeClass().addClass('fa fa-exclamation-circle error');
 						$el_size.addClass('error');
 					}
 

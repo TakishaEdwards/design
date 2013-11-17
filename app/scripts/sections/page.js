@@ -13,11 +13,11 @@ Pongo.Page = {
 
 	page_item_tpl:  '<li class="dd-item" data-id="<%= id %>">' +
 						'<div class="dd-handle">' +
-							'<i class="icon-unchecked"></i>' +
+							'<i class="fa fa-unchecked"></i>' +
 							' <%= name %>' +
 						'</div>' +
 						'<a href="<%= url %>" class="<%= cls %>">' +
-							'<i class="icon-chevron-right"></i>' +
+							'<i class="fa fa-chevron-right"></i>' +
 						'</a>' +
 					'</li>',
 
@@ -29,7 +29,7 @@ Pongo.Page = {
 							'<input type="checkbox" value="<%= id %>" class="is_valid">' +
 						'</label>' +
 						'<a href="<%= url %>" class="<%= cls %>">' +
-							'<i class="icon-chevron-left"></i>' +
+							'<i class="fa fa-chevron-left"></i>' +
 						'</a>' +
 					'</li>',
 
@@ -147,8 +147,8 @@ Pongo.Page = {
 	reorderElementLoading: function() {
 		var id = this.el_dropped_id;
 		var $el = $('.dl-item[data-id='+id+'] > a').find('i');
-		$el.removeClass('icon-chevron-left')
-		   .addClass('icon-refresh icon-spin');
+		$el.removeClass('fa fa-chevron-left')
+		   .addClass('fa fa-refresh fa fa-spin');
 	},
 
 	/**
@@ -176,8 +176,8 @@ Pongo.Page = {
 	reorderElementReset: function() {
 		var id = this.el_dropped_id;
 		var $el = $('.dl-item[data-id='+id+'] > a').find('i');
-		$el.removeClass('icon-refresh icon-spin')
-		   .addClass('icon-chevron-left');
+		$el.removeClass('fa fa-refresh fa fa-spin')
+		   .addClass('fa fa-chevron-left');
 	},
 
 	/**
@@ -285,18 +285,18 @@ Pongo.Page = {
 		$('.slug-full').html(page.slug);
 		$item = $('.dd-item[data-id='+page.id+'] > .dd-handle');
 		$item.find('span').html(page.name);
-		var $home = $item.find('.icon-home');
+		var $home = $item.find('.fa fa-home');
 		if(page.home) {
-			$('.dd[rel=' + page.lang + '] > ol').find('.icon-home').hide();
+			$('.dd[rel=' + page.lang + '] > ol').find('.fa fa-home').hide();
 			$home.show();
 		} else {
 			$home.hide();
 		}
 		var $check = $item.find('.check');
-		if(page.checked && $check.hasClass('icon-unchecked'))
-			$check.removeClass('icon-unchecked').addClass('icon-check');
-		if(!page.checked && $check.hasClass('icon-check'))
-			$check.removeClass('icon-check').addClass('icon-unchecked');
+		if(page.checked && $check.hasClass('fa fa-unchecked'))
+			$check.removeClass('fa fa-unchecked').addClass('fa fa-check-square-o');
+		if(!page.checked && $check.hasClass('fa fa-check'))
+			$check.removeClass('fa fa-check-square-o').addClass('fa fa-unchecked');
 	},
 
 	/**
@@ -316,8 +316,8 @@ Pongo.Page = {
 	reorderPageLoading: function() {
 		var id = this.pg_dropped_id;
 		var $el = $('.dd-item[data-id='+id+'] > a').find('i');
-		$el.removeClass('icon-chevron-right')
-		   .addClass('icon-refresh icon-spin');
+		$el.removeClass('fa fa-chevron-right')
+		   .addClass('fa fa-refresh fa fa-spin');
 	},
 
 	/**
@@ -344,8 +344,8 @@ Pongo.Page = {
 	reorderPageReset: function() {
 		var id = this.pg_dropped_id;
 		var $el = $('.dd-item[data-id='+id+'] > a').find('i');
-		$el.removeClass('icon-refresh icon-spin')
-		   .addClass('icon-chevron-right');
+		$el.removeClass('fa fa-refresh fa fa-spin')
+		   .addClass('fa fa-chevron-right');
 	},
 
 	/**

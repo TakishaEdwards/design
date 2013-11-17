@@ -6,7 +6,7 @@ Pongo.User = {
 
 	user_item_tpl: 	'<li class="dd-item" data-id="<%= id %>">' +						
 						'<a href="<%= url %>" class="<%= cls %>">' +						
-							'<i class="icon-chevron-left"></i>' +						
+							'<i class="fa fa-chevron-left"></i>' +						
 						'</a>' +
 						'<div class="dd-handle">' +						
 							'<span><%= name %></span>' +
@@ -18,7 +18,7 @@ Pongo.User = {
 
 	user_src_tpl: 	'<li class="dd-item search" data-id="<%= id %>">' +						
 						'<a href="<%= url %>" class="<%= cls %>">' +						
-							'<i class="icon-chevron-left"></i>' +						
+							'<i class="fa fa-chevron-left"></i>' +						
 						'</a>' +
 						'<div class="dd-handle">' +						
 							'<span><%= name %></span>' +

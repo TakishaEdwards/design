@@ -37,7 +37,7 @@ Pongo.File = {
 					$el.find('i').removeClass().addClass(value.icon);
 					if(value.errors) {
 						$.each(value.errors, function(type, error) {
-							$el.after('<li class="error msg"><i class="icon-exclamation-sign"></i>'+error+'</li>');
+							$el.after('<li class="error msg"><i class="fa fa-exclamation-circle"></i>'+error+'</li>');
 						});
 					}
 

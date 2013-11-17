@@ -3,14 +3,13 @@
   "version": "0.0.0",
   "dependencies": {
     "bootstrap": "~3.0.0",
-    "font-awesome": "~3.2.1",
-    "modernizr": "~2.6.2",
-    "jquery": "~1.9.1",
-    "underscore": "~1.5.1",
-    "lesshat": "~1.1.2",
-    "knockout.js": "~2.3.0",
-    "tinymce": "~4.0.9",
-    "jquery-ias": "~1.0.2"
+    "font-awesome": "~4.0.3",
+    "modernizr": "2.6.2",
+    "jquery": "1.10.2",
+    "underscore": "1.5.1",
+    "lesshat": "~2.0.0",
+    "knockout.js": "2.3.0",
+    "tinymce": "4.0.9"
   },
   "devDependencies": {}
 }

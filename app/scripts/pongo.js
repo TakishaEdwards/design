@@ -38,7 +38,7 @@ Pongo.UI = {
 
 	// HTML TEMPLATES
 	
-	loading_tpl: '<i class="icon-refresh icon-spin"></i> ',
+	loading_tpl: '<i class="fa fa-refresh fa fa-spin"></i> ',
 
 	counter_tpl: '<span class="label label-primary counter"><%= n %></span>',
 
@@ -60,9 +60,9 @@ Pongo.UI = {
 
 						'</div>' +
 
-						'<a href="<%= edit_url %>" class="<%= edit_class %>" data-default="<%= data_default %>" data-tag="<%= data_tag %>"><i class="icon-chevron-left"></i></a>' +
+						'<a href="<%= edit_url %>" class="<%= edit_class %>" data-default="<%= data_default %>" data-tag="<%= data_tag %>"><i class="fa fa-chevron-left"></i></a>' +
 
-						'<a href="<%= delete_url %>" class="remove confirm"><i class="icon-remove"></i></a>' +
+						'<a href="<%= delete_url %>" class="remove confirm"><i class="fa fa-times"></i></a>' +
 
 					'</li>',
 
@@ -113,7 +113,7 @@ Pongo.UI = {
 		if(this.btn_text.indexOf('<i') == -1) {
 			this.$btn_clicked.prepend(this.loading_tpl);
 		} else {
-			this.$btn_clicked.find('i').removeClass().addClass('icon-refresh icon-spin');
+			this.$btn_clicked.find('i').removeClass().addClass('fa fa-refresh fa fa-spin');
 		}
 	},
 
@@ -181,7 +181,7 @@ Pongo.UI = {
 	 * @return {bool}
 	 */
 	checkSpin: function() {
-		return this.$btn_clicked.find('i').hasClass('icon-spin');
+		return this.$btn_clicked.find('i').hasClass('fa fa-spin');
 	},
 
 	/**
@@ -411,14 +411,12 @@ Pongo.UI = {
 	 * @return {void}
 	 */
 	paginateList: function(item) {
-		$.ias({
-			scrollContainer: this.$right_body,
-			container : '.paginate',
+		$.LoadNext({
+			container: '.paginate ol',			
+			next: '.pagination',
+			next_link: 'li:last-child a',
 			item: item,
-			pagination: '.pagination',
-			next: '.pagination li:last-child a',
-			history: false,
-			loader: ''
+			btn_class: 'btn btn-primary btn-sm btn-block loading'
 		});
 	},
 

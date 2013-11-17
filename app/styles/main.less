@@ -2,9 +2,8 @@
 @icon-font-path: "../fonts/glyphicons/";
 
 @import "../bower_components/font-awesome/less/font-awesome.less";
-@FontAwesomePath: "../fonts/font-awesome";
 
-@import "../bower_components/lesshat/lesshat.less";
+@import "../bower_components/lesshat/build/lesshat.less";
 
 @import url(http://fonts.googleapis.com/css?family=Raleway:400,800,200);
 
@@ -50,7 +49,7 @@ body {
 	
 	&.login {
 
-		.gradient(~"radial-gradient(rgb(230, 236, 181), rgb(102, 126, 40))");
+		.background-image(radial-gradient(rgb(230, 236, 181), rgb(102, 126, 40)));
 
 	}
 
@@ -84,7 +83,7 @@ body {
 
 				background: #fff;
 				padding: @gutter @gutter;
-				.box-shadow(~"0 1px 5px #000");
+				.box-shadow(0 1px 5px #000);
 				.border-radius(8px);
 
 			}
@@ -595,6 +594,7 @@ body {
 	border: none !important;
 	margin: 0;
 	padding: 0;
+	z-index: 21;
 
 	width: 100%;
 	min-height: @navbar-h;
@@ -1151,7 +1151,7 @@ body {
 	padding: @gutter;
 	color: @gray-light;
 	background: @gray-dark;
-	.box-shadow(~"0 1px 5px #000");
+	.box-shadow(0 1px 5px #000);
 	
 	&.open {
 
@@ -1212,7 +1212,7 @@ body {
 	z-index: 1001;
 
 	background: @body-bg;
-	.box-shadow(~"0 1px 5px #000");
+	.box-shadow(0 1px 5px #000);
 
 	&.error {
 
@@ -1244,8 +1244,8 @@ body {
 
 .cssanimations.csstransforms .alert-msg {
 
-	.transform(~"translateY(-62px)");
-	.animation(~"slideDown 2.0s .1s 1 ease forwards;");
+	.transform(translateY(-62px));
+	.animation(slideDown 2.0s .1s 1 ease forwards);
 
 }
 
@@ -1505,7 +1505,6 @@ and (orientation : portrait) {
 					& > li {
 
 						padding-left: 10px;
-						padding-right: 0;
 						
 					}
 

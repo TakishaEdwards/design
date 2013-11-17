@@ -8,7 +8,7 @@ Pongo.Role = {
 							'<span><%= name %></span>' +						
 						'</div>' +						
 						'<a href="<%= url %>" class="<%= cls %>">' +						
-							'<i class="icon-chevron-left"></i>' +						
+							'<i class="fa fa-chevron-left"></i>' +						
 						'</a>' +
 					'</li>',
 
@@ -104,7 +104,7 @@ $(function() {
 
 	Pongo.Role.createNewRole();
 
-	Pongo.UI.paginateList('.dd-item');
+	// Pongo.UI.paginateList('.dd-item');
 
 
 });
