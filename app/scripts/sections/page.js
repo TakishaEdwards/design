@@ -285,9 +285,9 @@ Pongo.Page = {
 		$('.slug-full').html(page.slug);
 		$item = $('.dd-item[data-id='+page.id+'] > .dd-handle');
 		$item.find('span').html(page.name);
-		var $home = $item.find('.fa fa-home');
+		var $home = $item.find('.fa-home');
 		if(page.home) {
-			$('.dd[rel=' + page.lang + '] > ol').find('.fa fa-home').hide();
+			$('.dd[rel=' + page.lang + '] > ol').find('.fa-home').hide();
 			$home.show();
 		} else {
 			$home.hide();
