@@ -12,8 +12,8 @@ Pongo.Page = {
 	el_dropped_id: null,
 
 	page_item_tpl:  '<li class="dd-item" data-id="<%= id %>">' +
-						'<div class="dd-handle">' +
-							'<i class="fa fa-unchecked"></i>' +
+						'<div class="dd-handle invalid">' +
+							// '<i class="fa fa-unchecked"></i>' +
 							' <%= name %>' +
 						'</div>' +
 						'<a href="<%= url %>" class="<%= cls %>">' +
@@ -292,11 +292,7 @@ Pongo.Page = {
 		} else {
 			$home.hide();
 		}
-		var $check = $item.find('.check');
-		if(page.checked && $check.hasClass('fa fa-unchecked'))
-			$check.removeClass('fa fa-unchecked').addClass('fa fa-check-square-o');
-		if(!page.checked && $check.hasClass('fa fa-check'))
-			$check.removeClass('fa fa-check-square-o').addClass('fa fa-unchecked');
+		(page.checked) ? $item.removeClass('invalid') : $item.addClass('invalid');
 	},
 
 	/**

@@ -121,6 +121,8 @@ $(function() {
 
 	});
 
+	Pongo.Page.createNewElement();
+
 	Pongo.Element.insertMarker();
 	
 	Pongo.UI.changeMultiPanel();

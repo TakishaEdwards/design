@@ -413,6 +413,15 @@ ol.dl-list.dl-dragel {
 		border-right: 1px solid @gray-lighter;
 		.border-radius(4px);
 
+		&.invalid {
+			color: @gray-light;
+			font-style: italic;
+
+			span {
+				padding-right: 1px;
+			}
+		}
+
 		span {
 			display: inline-block;
 			max-width: 175px;

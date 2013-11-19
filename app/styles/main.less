@@ -671,9 +671,7 @@ body {
 #page-panel,
 #overlay {
 
-	-webkit-transition: all .3s ease;
-	-moz-transition: all .3s ease;
-	transition: all .3s ease;
+	.transition(all .3s ease);
 
 }
 
@@ -1249,26 +1247,8 @@ body {
 
 }
 
-@keyframes slideDown {
+.keyframes(~'slideDown, 0%,100%{ transform: translateY(-62px); } 10%,90%{ transform: translateY(0px); }');
 
-	0%, 100% { transform: translateY(-62px); }
-	0%, 100% { -ms-transform: translateY(-62px); }
-	10%, 90% { transform: translateY(0px); }
-	10%, 90% { -ms-transform: translateY(0px); }
-
-}
-@-webkit-keyframes slideDown {
-
-	0%, 100% { -webkit-transform: translateY(-62px); }
-	10%, 90% { -webkit-transform: translateY(0px); }
-
-}
-@-moz-keyframes slideDown {
-
-	0%, 100% { -moz-transform: translateY(-62px); }
-	10%, 90% { -moz-transform: translateY(0px); }
-
-}
 
 //---------------------------------------------------------------------------------
 //	CLOSE BUTTON
@@ -1278,6 +1258,16 @@ body {
 
 	font-family: @font-family-base;
 	color: @gray-light;
+
+}
+
+//---------------------------------------------------------------------------------
+//	FORM PLACEHOLDER
+//---------------------------------------------------------------------------------
+
+.form-control {
+
+	.placeholder(@gray-light);
 
 }
 
@@ -1676,6 +1666,13 @@ and (orientation : portrait) {
 	.modal-box {
 		padding-left: @treshold*.66 + @gutter;
 		padding-right: @treshold*.66 + @gutter;
+
+		.close {
+
+			color: #ffffff !important;
+			text-shadow: none;
+
+		}
 
 		form {
 

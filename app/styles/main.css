@@ -9008,6 +9008,15 @@ a.loading {
           background-clip: padding-box;
 }
 
+.dd ol li .dd-handle.invalid {
+  font-style: italic;
+  color: #999999;
+}
+
+.dd ol li .dd-handle.invalid span {
+  padding-right: 1px;
+}
+
 .dd ol li .dd-handle span {
   display: inline-block;
   max-width: 175px;
@@ -9127,6 +9136,15 @@ ol.dd-list.dd-dragel li .dd-handle {
   -webkit-background-clip: padding-box;
      -moz-background-clip: padding;
           background-clip: padding-box;
+}
+
+ol.dd-list.dd-dragel li .dd-handle.invalid {
+  font-style: italic;
+  color: #999999;
+}
+
+ol.dd-list.dd-dragel li .dd-handle.invalid span {
+  padding-right: 1px;
 }
 
 ol.dd-list.dd-dragel li .dd-handle span {
@@ -9936,6 +9954,15 @@ ol.dl-list.dl-dragel li a i.icon-refresh {
   -webkit-background-clip: padding-box;
      -moz-background-clip: padding;
           background-clip: padding-box;
+}
+
+.li-page .dd-handle.invalid {
+  font-style: italic;
+  color: #999999;
+}
+
+.li-page .dd-handle.invalid span {
+  padding-right: 1px;
 }
 
 .li-page .dd-handle span {
@@ -10940,9 +10967,10 @@ body {
 .modal-box,
 #page-panel,
 #overlay {
-  -webkit-transition: all .3s ease;
-     -moz-transition: all .3s ease;
-          transition: all .3s ease;
+  -webkit-transition: all 0.3s ease;
+     -moz-transition: all 0.3s ease;
+       -o-transition: all 0.3s ease;
+          transition: all 0.3s ease;
 }
 
 .push-right-options {
@@ -11426,23 +11454,8 @@ body {
           animation: slideDown 2s 0.1s 1 ease forwards;
 }
 
-@keyframes slideDown {
-  0%,
-  100% {
-    transform: translateY(-62px);
-  }
-  0%,
-  100% {
-    -ms-transform: translateY(-62px);
-  }
-  10%,
-  90% {
-    transform: translateY(0);
-  }
-  10%,
-  90% {
-    -ms-transform: translateY(0);
-  }
+lesshat-selector {
+  -lh-property: 0;
 }
 
 @-webkit-keyframes slideDown {
@@ -11467,8 +11480,68 @@ body {
   }
 }
 
+@-o-keyframes slideDown {
+  0%,
+  100% {
+    -o-transform: translateY(-62px);
+  }
+  10%,
+  90% {
+    -o-transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  0%,
+  100% {
+    -webkit-transform: translateY(-62px);
+       -moz-transform: translateY(-62px);
+        -ms-transform: translateY(-62px);
+            transform: translateY(-62px);
+  }
+  10%,
+  90% {
+    -webkit-transform: translateY(0);
+       -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
 .close {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #999999;
+}
+
+.form-control:-moz-placeholder {
+  color: #999999;
+}
+
+.form-control::-moz-placeholder {
+  color: #999999;
+}
+
+.form-control:-ms-input-placeholder {
+  color: #999999;
+}
+
+.form-control::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.form-control::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.form-control:-moz-placeholder {
+  color: #999999;
+}
+
+.form-control::-moz-placeholder {
+  color: #999999;
+}
+
+.form-control:-ms-input-placeholder {
   color: #999999;
 }
 
@@ -11689,6 +11762,10 @@ body {
   .modal-box {
     padding-right: 209.70000000000002px;
     padding-left: 209.70000000000002px;
+  }
+  .modal-box .close {
+    color: #ffffff !important;
+    text-shadow: none;
   }
   .modal-box form .form-buttons {
     text-align: right;
